@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATURAL de Costa Rica — Brand Guidelines 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Web / Core Colors */
+    --dark-brown: #512d1c;
+    --brown: #643f22;
+    --warm-beige: #cdc6bd;
+    --light-beige: #dbd8d3;
+    /* Content / Accent Colors */
+    --mustard: #D4A418;
+    --terracotta: #E76F51;
+    --medium-brown: #8B5E3C;
+    --forest-green: #344E41;
+    --sage-green: #A8C886;
+    --sand: #E5E555;
+    --cream: #F5F0EB;
+    --off-white: #FAF8F5;
+    --black: #1a1a1a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark-brown);
+    background: var(--off-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAVIGATION ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(81, 45, 28, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .logo-text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--warm-beige);
+    text-transform: uppercase;
+  }
+  nav .nav-links {
+    display: flex; gap: 28px; list-style: none;
+  }
+  nav .nav-links a {
+    color: var(--warm-beige);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s;
+  }
+  nav .nav-links a:hover { color: var(--mustard); }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 120px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .full-width {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--dark-brown);
+    color: var(--warm-beige);
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(100, 63, 34, 0.4) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(212, 164, 24, 0.08) 0%, transparent 50%);
+    animation: subtleShift 20s ease-in-out infinite alternate;
+  }
+  @keyframes subtleShift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(2%, -2%); }
+  }
+  .cover-content { position: relative; z-index: 1; }
+  .cover .brand-script {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--mustard);
+    margin-bottom: 12px;
+  }
+  .cover h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 72px;
+    letter-spacing: -1px;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  .cover .subtitle {
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--warm-beige);
+    margin-bottom: 48px;
+  }
+  .cover .year {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 8px;
+    color: var(--mustard);
+    border: 1px solid var(--mustard);
+    padding: 8px 24px;
+    display: inline-block;
+  }
+  .cover .meta {
+    margin-top: 60px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(205, 198, 189, 0.5);
+  }
+
+  /* ─── TOC ─── */
+  .toc {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 80vh;
+    padding: 0;
+  }
+  .toc-left {
+    background: var(--forest-green);
+    color: var(--cream);
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .toc-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--sage-green);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .toc-left h3 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  .toc-left p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245, 240, 235, 0.7);
+    max-width: 400px;
+  }
+  .toc-right {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(81, 45, 28, 0.1);
+  }
+  .toc-item:first-child { border-top: 1px solid rgba(81, 45, 28, 0.1); }
+  .toc-number {
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--mustard);
+    letter-spacing: 2px;
+    min-width: 40px;
+  }
+  .toc-label {
+    font-weight: 500;
+    font-size: 16px;
+    flex: 1;
+    color: var(--dark-brown);
+  }
+  .toc-page {
+    font-size: 12px;
+    color: var(--brown);
+    letter-spacing: 1px;
+  }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-number {
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--mustard);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-script {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--brown);
+    margin-bottom: 4px;
+  }
+  h2.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--dark-brown);
+  }
+  .section-intro {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--brown);
+    max-width: 720px;
+    margin-bottom: 60px;
+  }
+
+  /* ─── BRAND ESSENCE ─── */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 60px;
+  }
+  .pillar {
+    padding: 48px;
+    border: 1px solid rgba(81, 45, 28, 0.1);
+    position: relative;
+  }
+  .pillar::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 48px; right: 48px;
+    font-size: 64px;
+    font-weight: 700;
+    color: rgba(81, 45, 28, 0.05);
+    line-height: 1;
+  }
+  .pillar h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--forest-green);
+    margin-bottom: 16px;
+  }
+  .pillar p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--brown);
+  }
+  .pillar-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mustard);
+    margin-bottom: 16px;
+  }
+
+  /* ─── MISSION / VOICE ─── */
+  .voice-block {
+    background: var(--dark-brown);
+    color: var(--cream);
+    padding: 80px;
+    margin: 60px 0;
+    position: relative;
+  }
+  .voice-block::before {
+    content: '\201C';
+    position: absolute;
+    top: 40px; left: 60px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: rgba(212, 164, 24, 0.15);
+    line-height: 1;
+  }
+  .voice-block blockquote {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .voice-block .attribution {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mustard);
+  }
+
+  /* ─── LOGO SECTION ─── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+  }
+  .logo-card {
+    padding: 48px 32px;
+    text-align: center;
+    border: 1px solid rgba(81, 45, 28, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 240px;
+    transition: box-shadow 0.3s;
+  }
+  .logo-card:hover {
+    box-shadow: 0 8px 32px rgba(81, 45, 28, 0.08);
+  }
+  .logo-card.dark {
+    background: var(--dark-brown);
+    border-color: transparent;
+  }
+  .logo-card.green {
+    background: var(--forest-green);
+    border-color: transparent;
+  }
+  .logo-card.beige {
+    background: var(--warm-beige);
+    border-color: transparent;
+  }
+  .logo-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  /* SVG Logo Placeholder */
+  .logo-svg {
+    width: 80px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-full {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .logo-text-mark {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
+  .logo-text-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .logo-rules {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .logo-rule {
+    padding: 32px;
+    border-left: 3px solid var(--mustard);
+  }
+  .logo-rule h4 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: var(--dark-brown);
+  }
+  .logo-rule p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--brown);
+  }
+
+  /* ─── COLOR PALETTE ─── */
+  .palette-section { margin-top: 48px; margin-bottom: 60px; }
+  .palette-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--brown);
+    margin-bottom: 20px;
+  }
+  .palette-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .swatch {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .swatch-color {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+  }
+  .swatch-info {
+    padding: 14px 12px;
+    background: white;
+  }
+  .swatch-name {
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--dark-brown);
+  }
+  .swatch-hex {
+    font-size: 12px;
+    color: var(--brown);
+    font-family: 'DM Sans', monospace;
+    margin-top: 2px;
+  }
+  .swatch-usage {
+    font-size: 11px;
+    color: rgba(100, 63, 34, 0.6);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .swatch-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+  }
+
+  .color-pairing {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .pairing-demo {
+    padding: 32px;
+    border-radius: 4px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pairing-demo h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .pairing-demo .script { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; }
+  .pairing-demo .body-text { font-size: 13px; line-height: 1.6; margin-top: 8px; }
+  .pairing-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 12px;
+    opacity: 0.6;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  .type-showcase {
+    margin-top: 60px;
+  }
+  .type-block {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(81, 45, 28, 0.1);
+  }
+  .type-block:first-child { border-top: 1px solid rgba(81, 45, 28, 0.1); }
+  .type-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+  .type-role {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mustard);
+  }
+  .type-name {
+    font-size: 12px;
+    color: var(--brown);
+    letter-spacing: 1px;
+  }
+  .type-specimen-dm {
+    font-family: 'DM Sans', sans-serif;
+  }
+  .type-specimen-script {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+  .type-large {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .type-medium {
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  .type-body {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 600px;
+    color: var(--brown);
+  }
+  .type-alphabet {
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: var(--brown);
+    margin-top: 16px;
+  }
+
+  .type-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    margin-top: 60px;
+  }
+  .type-rule {
+    padding: 32px;
+    background: var(--cream);
+  }
+  .type-rule h4 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: var(--dark-brown);
+  }
+  .type-rule p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--brown);
+  }
+  .type-rule .example {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(81, 45, 28, 0.1);
+  }
+
+  /* ─── PHOTOGRAPHY ─── */
+  .photo-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .photo-card {
+    background: var(--cream);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .photo-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: 24px; right: 24px;
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(81, 45, 28, 0.05);
+  }
+  .photo-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--dark-brown);
+  }
+  .photo-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .photo-card li {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--brown);
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+  .photo-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 1px;
+    background: var(--mustard);
+  }
+
+  .photo-donts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 48px;
+  }
+  .do-block, .dont-block {
+    padding: 32px;
+  }
+  .do-block { border-left: 3px solid var(--forest-green); }
+  .dont-block { border-left: 3px solid var(--terracotta); }
+  .do-block h4, .dont-block h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .do-block h4 { color: var(--forest-green); }
+  .dont-block h4 { color: var(--terracotta); }
+  .do-block li, .dont-block li {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--brown);
+    margin-left: 16px;
+  }
+
+  /* ─── ICONOGRAPHY ─── */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .icon-item {
+    text-align: center;
+    padding: 24px 12px;
+    border: 1px solid rgba(81, 45, 28, 0.08);
+  }
+  .icon-preview {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    background: var(--forest-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage-green);
+    font-size: 20px;
+  }
+  .icon-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--brown);
+  }
+
+  .icon-style-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .icon-rule-card {
+    padding: 32px;
+    background: var(--forest-green);
+    color: var(--cream);
+  }
+  .icon-rule-card h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--sage-green);
+    margin-bottom: 12px;
+  }
+  .icon-rule-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(245, 240, 235, 0.8);
+  }
+
+  /* ─── TONE OF VOICE ─── */
+  .tone-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .tone-card {
+    padding: 40px;
+    border: 1px solid rgba(81, 45, 28, 0.1);
+  }
+  .tone-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--dark-brown);
+  }
+  .tone-card .tone-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--brown);
+    margin-bottom: 20px;
+  }
+  .tone-example {
+    background: var(--cream);
+    padding: 20px;
+    border-left: 3px solid var(--mustard);
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--dark-brown);
+    font-style: italic;
+  }
+  .tone-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mustard);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* ─── DOCUMENT PATTERNS ─── */
+  .doc-pattern {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    margin-top: 48px;
+    padding: 48px;
+    background: var(--cream);
+    margin-bottom: 32px;
+  }
+  .doc-sidebar h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mustard);
+    margin-bottom: 8px;
+  }
+  .doc-sidebar .doc-type {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 12px;
+  }
+  .doc-sidebar .doc-goal {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--brown);
+  }
+  .doc-sidebar .doc-priority {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: var(--dark-brown);
+    color: var(--mustard);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  .doc-structure {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .doc-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 20px;
+    background: white;
+    border-left: 3px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .doc-step:hover { border-left-color: var(--mustard); }
+  .doc-step-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--mustard);
+    letter-spacing: 1px;
+    min-width: 24px;
+    padding-top: 2px;
+  }
+  .doc-step-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 4px;
+  }
+  .doc-step-desc {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--brown);
+  }
+  .doc-step-elements {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .element-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border: 1px solid rgba(81, 45, 28, 0.15);
+    color: var(--brown);
+  }
+
+  /* ─── SOCIAL MEDIA ─── */
+  .feed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-top: 48px;
+    max-width: 480px;
+  }
+  .feed-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .social-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .social-rule {
+    padding: 32px;
+    border-top: 3px solid var(--mustard);
+    background: var(--cream);
+  }
+  .social-rule h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--dark-brown);
+  }
+  .social-rule p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--brown);
+  }
+
+  /* ─── COMPETITORS ─── */
+  .competitor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .competitor-card {
+    padding: 32px 24px;
+    border: 1px solid rgba(81, 45, 28, 0.08);
+    text-align: center;
+  }
+  .competitor-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--dark-brown);
+  }
+  .competitor-card p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--brown);
+  }
+  .competitor-card .comp-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-top: 12px;
+    display: block;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--dark-brown);
+    color: var(--warm-beige);
+    padding: 80px;
+    text-align: center;
+  }
+  .footer .footer-logo {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .footer p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(205, 198, 189, 0.6);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .footer .footer-contact {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 12px;
+    color: rgba(205, 198, 189, 0.5);
+  }
+  .footer .footer-contact a {
+    color: var(--mustard);
+    text-decoration: none;
+  }
+
+  /* ─── UTILITIES ─── */
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--mustard);
+    margin: 24px 0;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid;
+  }
+  .tag-mustard { color: var(--mustard); border-color: var(--mustard); }
+  .tag-terracotta { color: var(--terracotta); border-color: var(--terracotta); }
+  .tag-green { color: var(--forest-green); border-color: var(--forest-green); }
+
+  .note-box {
+    padding: 24px 32px;
+    background: rgba(212, 164, 24, 0.08);
+    border-left: 3px solid var(--mustard);
+    margin: 32px 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--brown);
+  }
+
+  .clearance-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(81, 45, 28, 0.15);
+    padding: 24px 40px;
+    position: relative;
+  }
+  .clearance-label {
+    position: absolute;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+  }
+  .clearance-label.top { top: -8px; }
+  .clearance-label.right { right: -8px; transform: rotate(90deg); }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    section { padding: 80px 40px; }
+    .cover h1 { font-size: 48px; }
+    h2.section-title { font-size: 36px; }
+    .toc, .pillars-grid, .logo-rules, .photo-donts, .tone-grid { grid-template-columns: 1fr; }
+    .logo-grid, .photo-categories, .type-rules, .social-rules, .icon-style-rules { grid-template-columns: 1fr 1fr; }
+    .competitor-grid { grid-template-columns: 1fr 1fr; }
+    .doc-pattern { grid-template-columns: 1fr; }
+    .icon-grid { grid-template-columns: repeat(3, 1fr); }
+    nav .nav-links { display: none; }
+  }
+  @media (max-width: 640px) {
+    section { padding: 60px 24px; }
+    .cover h1 { font-size: 36px; }
+    h2.section-title { font-size: 28px; }
+    .logo-grid, .photo-categories, .type-rules, .social-rules, .icon-style-rules { grid-template-columns: 1fr; }
+    .color-pairing { grid-template-columns: 1fr; }
+    .competitor-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ NAVIGATION ═══ -->
+<nav>
+  <div class="logo-text">Natural de Costa Rica</div>
+  <ul class="nav-links">
+    <li><a href="#essence">Essence</a></li>
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#color">Color</a></li>
+    <li><a href="#typography">Type</a></li>
+    <li><a href="#photography">Photo</a></li>
+    <li><a href="#iconography">Icons</a></li>
+    <li><a href="#voice">Voice</a></li>
+    <li><a href="#documents">Documents</a></li>
+    <li><a href="#social">Social</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════ COVER ═══ -->
+<section class="cover full-width">
+  <div class="cover-content">
+    <div class="brand-script">Brand Guidelines</div>
+    <h1>NATURAL<br>de Costa Rica</h1>
+    <div class="subtitle">Volcanic Gourmet Coffee</div>
+    <div class="year">2026</div>
+    <div class="meta">Confidential &mdash; For internal and partner use only</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ TABLE OF CONTENTS ═══ -->
+<div class="toc full-width">
+  <div class="toc-left">
+    <h2>Brand Guidelines</h2>
+    <h3>Table of<br>Contents</h3>
+    <p>A comprehensive guide to building a solid, attractive, and consistent brand identity for NATURAL de Costa Rica &mdash; consolidating our values, mission, and aesthetic across every touchpoint.</p>
+  </div>
+  <div class="toc-right">
+    <div class="toc-item"><span class="toc-number">01</span><span class="toc-label">Brand Essence &amp; Pillars</span><span class="toc-page">Mission, values, visual DNA</span></div>
+    <div class="toc-item"><span class="toc-number">02</span><span class="toc-label">Logo System</span><span class="toc-page">Logogram, logotype, rules</span></div>
+    <div class="toc-item"><span class="toc-number">03</span><span class="toc-label">Color Palette</span><span class="toc-page">Web, content, pairings</span></div>
+    <div class="toc-item"><span class="toc-number">04</span><span class="toc-label">Typography</span><span class="toc-page">DM Sans, Sloop Script Pro</span></div>
+    <div class="toc-item"><span class="toc-number">05</span><span class="toc-label">Photography Direction</span><span class="toc-page">Style, categories, rules</span></div>
+    <div class="toc-item"><span class="toc-number">06</span><span class="toc-label">Iconography</span><span class="toc-page">Hand-drawn illustration system</span></div>
+    <div class="toc-item"><span class="toc-number">07</span><span class="toc-label">Tone of Voice</span><span class="toc-page">Language, messaging, copy patterns</span></div>
+    <div class="toc-item"><span class="toc-number">08</span><span class="toc-label">Document Templates</span><span class="toc-page">Traceability Report, Portfolio</span></div>
+    <div class="toc-item"><span class="toc-number">09</span><span class="toc-label">Social Media &amp; Feed</span><span class="toc-page">Instagram aesthetic, post rules</span></div>
+    <div class="toc-item"><span class="toc-number">10</span><span class="toc-label">Competitive Positioning</span><span class="toc-page">Landscape &amp; differentiation</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ 01 BRAND ESSENCE ═══ -->
+<section id="essence">
+  <div class="section-number">01</div>
+  <div class="section-script">Brand Essence</div>
+  <h2 class="section-title">Who We Are</h2>
+  <div class="divider"></div>
+  <p class="section-intro">
+    At Natural de Costa Rica, we believe true coffee excellence begins at origin and is preserved through control, transparency, and respect for nature. We are not intermediaries &mdash; we work side by side with producers, overseeing every stage from micro-lot selection to export.
+  </p>
+
+  <div class="voice-block">
+    <blockquote>
+      From our farms to your roast,<br>
+      full control from origin to cup.
+    </blockquote>
+    <div class="attribution">Brand Tagline &mdash; B2B</div>
+  </div>
+
+  <div class="voice-block" style="background: var(--forest-green); margin-top: 0;">
+    <blockquote>
+      Taste Costa Rica,<br>
+      one micro-lot at a time.
+    </blockquote>
+    <div class="attribution">Brand Tagline &mdash; B2C</div>
+  </div>
+
+  <div class="pillars-grid">
+    <div class="pillar" data-number="01">
+      <span class="pillar-tag">Visual Pillar</span>
+      <h3>Natural</h3>
+      <p>We transmit closeness, nature, and the essence of Costa Rica. Green tones anchor our palette. Imagery reflects the jungle, volcanic highlands, and the authentic origin of our products. Every visual should feel alive, organic, and rooted in the land.</p>
+    </div>
+    <div class="pillar" data-number="02">
+      <span class="pillar-tag">Visual Pillar</span>
+      <h3>Gourmet</h3>
+      <p>We offer a luxury product of unquestionable quality &mdash; the customer must perceive this at first glance. Photography is meticulous, high-resolution, and explores diverse perspectives. Layouts are clean and sophisticated. Every detail reinforces value and exclusivity.</p>
+    </div>
+    <div class="pillar" data-number="03">
+      <span class="pillar-tag">Operational Pillar</span>
+      <h3>Traceable</h3>
+      <p>Every batch is traceable from farm to cup. We record altitude, location, variety, process method, and harvest date for each micro-lot. No blending between varieties. Transparency is not a feature &mdash; it is the foundation of our credibility.</p>
+    </div>
+    <div class="pillar" data-number="04">
+      <span class="pillar-tag">Operational Pillar</span>
+      <h3>Artisanal</h3>
+      <p>We work in micro-lots of less than 300 kg. Traditional sun drying. Handpicked cherries. Controlled fermentation. We don&rsquo;t chase volume &mdash; we chase flavor, precision, and consistency. Every process is monitored under strict quality control.</p>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top: 60px;">
+    <strong>Key Brand Facts:</strong> 100% Arabica &bull; Poas Volcano, Alajuela, Costa Rica &bull; &plusmn;1,500 m.a.s.l. &bull; 3 varieties (Caturra, Sarchimor, Villa Sarchi) &bull; Washed + Red Honey processes &bull; PROCOMER certified &bull; Air-shipped to Europe in 36h
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ 02 LOGO ═══ -->
+<section id="logo">
+  <div class="section-number">02</div>
+  <div class="section-script">Logo System</div>
+  <h2 class="section-title">Logo Guidelines</h2>
+  <div class="divider"></div>
+  <p class="section-intro">
+    The logo must be present in all brand publications to reinforce visual consistency and recognition. Its size and layout may adapt to each format, always respecting the visual identity guidelines.
+  </p>
+
+  <div class="logo-grid">
+    <div class="logo-card dark">
+      <div class="logo-svg">
+        <svg width="60" height="80" viewBox="0 0 60 80" fill="none">
+          <ellipse cx="10" cy="68" rx="5" ry="7" fill="#D4A418" opacity="0.8"/>
+          <ellipse cx="22" cy="72" rx="4" ry="5" fill="#D4A418" opacity="0.6"/>
+          <path d="M30 5 C30 5, 48 15, 45 35 C43 48, 35 52, 30 55 C25 52, 17 48, 15 35 C12 15, 30 5, 30 5Z" fill="#CDC6BD"/>
+          <circle cx="30" cy="22" r="3" fill="#512d1c"/>
+          <path d="M28 30 C28 30, 20 45, 25 58" stroke="#CDC6BD" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M32 30 C32 30, 40 45, 35 58" stroke="#CDC6BD" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-card-label" style="color: var(--warm-beige);">Logogram Only</div>
+    </div>
+    <div class="logo-card dark">
+      <div class="logo-full">
+        <svg width="40" height="52" viewBox="0 0 60 80" fill="none">
+          <ellipse cx="10" cy="68" rx="5" ry="7" fill="#D4A418" opacity="0.8"/>
+          <ellipse cx="22" cy="72" rx="4" ry="5" fill="#D4A418" opacity="0.6"/>
+          <path d="M30 5 C30 5, 48 15, 45 35 C43 48, 35 52, 30 55 C25 52, 17 48, 15 35 C12 15, 30 5, 30 5Z" fill="#CDC6BD"/>
+          <circle cx="30" cy="22" r="3" fill="#512d1c"/>
+          <path d="M28 30 C28 30, 20 45, 25 58" stroke="#CDC6BD" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M32 30 C32 30, 40 45, 35 58" stroke="#CDC6BD" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="logo-text-mark" style="color: var(--warm-beige);">NATUR<span style="color: var(--mustard);">A</span>L</div>
+          <div class="logo-text-sub" style="color: var(--warm-beige);">Costa Rica</div>
+        </div>
+      </div>
+      <div class="logo-card-label" style="color: var(--warm-beige);">Logogram + Logotype &mdash; Stacked</div>
+    </div>
+    <div class="logo-card dark">
+      <div class="logo-full" style="flex-direction: row; gap: 12px;">
+        <svg width="28" height="36" viewBox="0 0 60 80" fill="none">
+          <ellipse cx="10" cy="68" rx="5" ry="7" fill="#D4A418" opacity="0.8"/>
+          <ellipse cx="22" cy="72" rx="4" ry="5" fill="#D4A418" opacity="0.6"/>
+          <path d="M30 5 C30 5, 48 15, 45 35 C43 48, 35 52, 30 55 C25 52, 17 48, 15 35 C12 15, 30 5, 30 5Z" fill="#CDC6BD"/>
+          <circle cx="30" cy="22" r="3" fill="#512d1c"/>
+          <path d="M28 30 C28 30, 20 45, 25 58" stroke="#CDC6BD" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M32 30 C32 30, 40 45, 35 58" stroke="#CDC6BD" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <span class="logo-text-mark" style="color: var(--warm-beige); font-size: 16px;">NATUR<span style="color: var(--mustard);">A</span>L</span>
+          <span class="logo-text-sub" style="color: var(--warm-beige); font-size: 11px; margin-left: 4px;">Costa Rica</span>
+        </div>
+      </div>
+      <div class="logo-card-label" style="color: var(--warm-beige);">Horizontal Lockup</div>
+    </div>
+  </div>
+
+  <div class="palette-label" style="margin-top: 48px;">Approved Logo Backgrounds</div>
+  <div class="logo-grid">
+    <div class="logo-card dark">
+      <span style="color: var(--warm-beige); font-weight: 700; font-size: 13px; letter-spacing: 3px;">NATUR<span style="color: var(--mustard);">A</span>L</span>
+      <div class="logo-card-label" style="color: var(--warm-beige);">On Dark Brown</div>
+    </div>
+    <div class="logo-card green">
+      <span style="color: var(--cream); font-weight: 700; font-size: 13px; letter-spacing: 3px;">NATUR<span style="color: var(--sage-green);">A</span>L</span>
+      <div class="logo-card-label" style="color: var(--sage-green);">On Forest Green</div>
+    </div>
+    <div class="logo-card beige">
+      <span style="color: var(--dark-brown); font-weight: 700; font-size: 13px; letter-spacing: 3px;">NATUR<span style="color: var(--mustard);">A</span>L</span>
+      <div class="logo-card-label" style="color: var(--brown);">On Warm Beige</div>
+    </div>
+  </div>
+
+  <div class="logo-rules">
+    <div class="logo-rule">
+      <h4>Minimum Clear Space</h4>
+      <p>Maintain a clear zone around the logo equal to the height of the &ldquo;A&rdquo; in NATURAL. No text, graphics, or other elements may intrude into this space.</p>
+    </div>
+    <div class="logo-rule">
+      <h4>Minimum Size</h4>
+      <p>The logogram alone must not be reproduced smaller than 20px in height on screen or 8mm in print. The full lockup requires a minimum of 100px / 35mm width.</p>
+    </div>
+    <div class="logo-rule">
+      <h4>Color Restrictions</h4>
+      <p>The logo must only appear within the established color palette. It may be rendered in brand browns, greens, beige, cream, white, or black &mdash; never in unauthorized hues.</p>
+    </div>
+    <div class="logo-rule">
+      <h4>Prohibited Uses</h4>
+      <p>Never stretch, rotate, add shadows, apply gradients, change the typeface, alter proportions, or place the logo on busy photographic backgrounds without sufficient contrast.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ 03 COLOR ═══ -->
+<section id="color">
+  <div class="section-number">03</div>
+  <div class="section-script">Color Palette</div>
+  <h2 class="section-title">Our Colors</h2>
+  <div class="divider"></div>
+  <p class="section-intro">
+    The palette balances warm tones (the mustard of coffee, the terracotta of cacao &mdash; both corporate and immovable) with natural neutrals that stand out without competing. It reinforces the artisanal, organic, and modern character of the brand.
+  </p>
+
+  <div class="palette-section">
+    <div class="palette-label">Core / Web Palette</div>
+    <div class="palette-row">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #512d1c;"><span class="swatch-tag">Primary</span></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Dark Espresso</div>
+          <div class="swatch-hex">#512d1c</div>
+          <div class="swatch-usage">Headlines, primary text, nav bars</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #643f22;"><span class="swatch-tag">Secondary</span></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Roasted Brown</div>
+          <div class="swatch-hex">#643f22</div>
+          <div class="swatch-usage">Body text, secondary elements</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #cdc6bd;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Warm Beige</div>
+          <div class="swatch-hex">#cdc6bd</div>
+          <div class="swatch-usage">Backgrounds, dividers, muted areas</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #dbd8d3;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Light Sand</div>
+          <div class="swatch-hex">#dbd8d3</div>
+          <div class="swatch-usage">Page backgrounds, cards</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-label">Content / Accent Palette</div>
+    <div class="palette-row">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #D4A418;"><span class="swatch-tag">Corporate</span></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Mustard Gold</div>
+          <div class="swatch-hex">#D4A418</div>
+          <div class="swatch-usage">Key data highlights, accent, CTAs</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #E76F51;"><span class="swatch-tag">Corporate</span></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Terracotta</div>
+          <div class="swatch-hex">#E76F51</div>
+          <div class="swatch-usage">Cacao accents, product highlights</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #8B5E3C;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Parchment Brown</div>
+          <div class="swatch-hex">#8B5E3C</div>
+          <div class="swatch-usage">Supporting text, warm accents</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #344E41;"><span class="swatch-tag">Primary Green</span></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Forest Green</div>
+          <div class="swatch-hex">#344E41</div>
+          <div class="swatch-usage">Section backgrounds, nature blocks</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #A8C886;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sage Green</div>
+          <div class="swatch-hex">#A8C886</div>
+          <div class="swatch-usage">Iconography, light accents</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F5F0EB;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Off White</div>
+          <div class="swatch-hex">#F5F0EB</div>
+          <div class="swatch-usage">Page background, breathing space</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-label">Approved Color Pairings &mdash; Text on Background</div>
+    <div class="color-pairing">
+      <div class="pairing-demo" style="background: var(--forest-green); color: var(--cream);">
+        <div>
+          <h4>Headline Text</h4>
+          <div class="script" style="color: var(--sage-green);">accent script</div>
+          <div class="body-text">Body copy sits comfortably on dark green, maintaining readability and a natural, grounded feel.</div>
+        </div>
+        <div class="pairing-label">Forest Green + Cream</div>
+      </div>
+      <div class="pairing-demo" style="background: var(--dark-brown); color: var(--warm-beige);">
+        <div>
+          <h4>Headline Text</h4>
+          <div class="script" style="color: var(--mustard);">accent script</div>
+          <div class="body-text">The signature dark combination for premium, sophisticated sections. Used for covers and key brand moments.</div>
+        </div>
+        <div class="pairing-label">Dark Espresso + Beige</div>
+      </div>
+      <div class="pairing-demo" style="background: var(--cream); color: var(--dark-brown);">
+        <div>
+          <h4>Headline Text</h4>
+          <div class="script" style="color: var(--forest-green);">accent script</div>
+          <div class="body-text">Light backgrounds for readable long-form content. Green script adds organic warmth without competing.</div>
+        </div>
+        <div class="pairing-label">Cream + Espresso</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <strong>Corporate Colors (Immovable):</strong> Mustard Gold (#D4A418) and Terracotta (#E76F51) are permanent corporate accent colors. They are used to highlight key data, product features, and calls-to-action. These two colors must never be modified, replaced, or used as full-page backgrounds.
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ 04 TYPOGRAPHY ═══ -->
+<section id="typography">
+  <div class="section-number">04</div>
+  <div class="section-script">Typography</div>
+  <h2 class="section-title">Type System</h2>
+  <div class="divider"></div>
+  <p class="section-intro">
+    Our typography pairing &mdash; DM Sans with Sloop Script Pro &mdash; balances gourmet sophistication with clean readability. DM Sans carries the voice; Sloop Script Pro adds elegance and artisanal warmth.
+  </p>
+
+  <div class="type-showcase">
+    <div class="type-block">
+      <div class="type-header">
+        <span class="type-role">Primary Typeface</span>
+        <span class="type-name">DM Sans &mdash; Regular, Bold</span>
+      </div>
+      <div class="type-specimen-dm type-large">From Our Farms<br>to Your Roast</div>
+      <div class="type-specimen-dm type-medium" style="font-weight: 400;">Every batch is traceable, ethically sourced.</div>
+      <div class="type-specimen-dm type-body">We produce and offer high-altitude specialty coffee from Costa Rica, grown at approximately 1,500 m above sea level on volcanic highlands that naturally enrich bean quality and consistency.</div>
+      <div class="type-specimen-dm type-alphabet">Aa Bb Cc Dd Ee Ff Gg Hh &mdash; 1234567890</div>
+    </div>
+
+    <div class="type-block">
+      <div class="type-header">
+        <span class="type-role">Secondary / Accent Typeface</span>
+        <span class="type-name">Sloop Script Pro (shown: Playfair Display Italic)</span>
+      </div>
+      <div class="type-specimen-script type-large" style="font-weight: 400;">Taste Costa Rica</div>
+      <div class="type-specimen-script type-medium" style="font-weight: 400;">one micro-lot at a time</div>
+      <div class="type-specimen-script type-body" style="font-style: italic;">Used sparingly to highlight accent phrases, taglines, and elegant moments. Always lowercase, never bold.</div>
+      <div class="type-specimen-script type-alphabet" style="font-style: italic;">Aa Bb Cc Dd Ee Ff Gg Hh &mdash; 1234567890</div>
+    </div>
+  </div>
+
+  <div class="type-rules">
+    <div class="type-rule">
+      <h4>Headlines</h4>
+      <p>DM Sans Bold, UPPERCASE. Used for all publication covers and section titles to maintain visual consistency.</p>
+      <div class="example">
+        <div style="font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 1px;">COFFEE PROCESSES</div>
+        <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: var(--forest-green); margin-top: 4px;">Controlled Methods, Consistent Results</div>
+      </div>
+    </div>
+    <div class="type-rule">
+      <h4>Body Copy</h4>
+      <p>DM Sans Regular, sentence case. For all paragraph text, descriptions, and informational content. Size: 14-16px, line-height: 1.7-1.8.</p>
+      <div class="example">
+        <div style="font-size: 14px; line-height: 1.7; color: var(--brown);">Our coffees are born on the slopes of the Poas Volcano, an active volcano in the province of Alajuela.</div>
+      </div>
+    </div>
+    <div class="type-rule">
+      <h4>Script Accents</h4>
+      <p>Sloop Script Pro, always lowercase, never bold. Limited to highlighting specific phrases, taglines, or emotional moments.</p>
+      <div class="example">
+        <div style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; color: var(--forest-green);">full control from origin to cup</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ 05 PHOTOGRAPHY ═══ -->
+<section id="photography">
+  <div class="section-number">05</div>
+  <div class="section-script">Photography</div>
+  <h2 class="section-title">Photography Direction</h2>
+  <div class="divider"></div>
+  <p class="section-intro">
+    Our photography must simultaneously feel natural and gourmet. Every image should convey authenticity, quality, and the unique story of Costa Rican volcanic coffee. Careful editing, high resolution, and diverse perspectives are non-negotiable.
+  </p>
+
+  <div class="photo-categories">
+    <div class="photo-card" data-num="01">
+      <h4>Origin &amp; Terroir</h4>
+      <ul>
+        <li>Volcanic landscapes and jungle canopy</li>
+        <li>Poas Volcano crater and slopes</li>
+        <li>Coffee farms with mountains / drying beds</li>
+        <li>Rich volcanic soil close-ups</li>
+        <li>Sunrise/sunset over highlands</li>
+      </ul>
+    </div>
+    <div class="photo-card" data-num="02">
+      <h4>People &amp; Process</h4>
+      <ul>
+        <li>Producers hand-selecting cherries</li>
+        <li>Workers at the beneficio (Cafe de Altura)</li>
+        <li>Drying beds with parchment coffee</li>
+        <li>Fermentation tanks, washing stations</li>
+        <li>Quality control: cupping, moisture testing</li>
+      </ul>
+    </div>
+    <div class="photo-card" data-num="03">
+      <h4>Product &amp; Lifestyle</h4>
+      <ul>
+        <li>Vacuum-sealed packaging, multiple angles</li>
+        <li>Green beans in detail (texture, color)</li>
+        <li>Roasting machinery (Loring, Probat UG)</li>
+        <li>Pour-over and espresso preparation</li>
+        <li>Gourmet food pairings (pastries, chocolate)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="photo-donts">
+    <div class="do-block">
+      <h4>Do</h4>
+      <ul>
+        <li>Use natural, warm lighting (golden hour preferred)</li>
+        <li>Show real producers and real farms</li>
+        <li>Maintain consistent color grading (warm browns, greens)</li>
+        <li>Include the packaging or logo when possible</li>
+        <li>Explore different perspectives: overhead, macro, wide</li>
+        <li>Ensure every image is high-resolution (min 300 DPI print / 2x screen)</li>
+      </ul>
+    </div>
+    <div class="dont-block">
+      <h4>Don&rsquo;t</h4>
+      <ul>
+        <li>Use stock photos that feel generic or staged</li>
+        <li>Apply heavy filters or unnatural color grading</li>
+        <li>Show low-quality, blurry, or poorly lit images</li>
+        <li>Use photos that could belong to any coffee brand</li>
+        <li>Mix visual styles (e.g., industrial + rustic)</li>
+        <li>Crop the logo or packaging awkwardly</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <strong>Photo Captions:</strong> When using origin photos, always include a caption that reinforces traceability. Examples: &ldquo;Micro-lot selection in Costa Rica &mdash; every process is traceable&rdquo; or &ldquo;Sun drying at 1,500 m.a.s.l., Poas Volcano region.&rdquo;
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ 06 ICONOGRAPHY ═══ -->
+<section id="iconography">
+  <div class="section-number">06</div>
+  <div class="section-script">Iconography</div>
+  <h2 class="section-title">Hand-Drawn Illustration System</h2>
+  <div class="divider"></div>
+  <p class="section-intro">
+    A series of 100% original hand-drawn illustrations created to enrich our content across documents, Instagram, and packaging. They add warmth, personality, and a distinctly artisanal character that reinforces the brand&rsquo;s handmade ethos.
+  </p>
+
+  <div class="icon-grid">
+    <div class="icon-item">
+      <div class="icon-preview">&#9752;</div>
+      <div class="icon-label">Coffee Plant</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon-preview">&#9749;</div>
+      <div class="icon-label">Coffee Cup</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon-preview">&#9728;</div>
+      <div class="icon-label">Sun Drying</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon-preview">&#9992;</div>
+      <div class="icon-label">Air Freight</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon-preview">&#127968;</div>
+      <div class="icon-label">Storage</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon-preview">&#127795;</div>
+      <div class="icon-label">Palm Tree</div>
+    </div>
+  </div>
+
+  <div class="icon-style-rules">
+    <div class="icon-rule-card">
+      <h4>Style</h4>
+      <p>Hand-drawn, organic line work. Not polished or geometric &mdash; intentionally imperfect to evoke craftsmanship and authenticity. Monochrome within the brand palette.</p>
+    </div>
+    <div class="icon-rule-card">
+      <h4>Color</h4>
+      <p>Rendered in Sage Green (#A8C886) on Forest Green backgrounds, or in Dark Espresso (#512d1c) / Mustard Gold (#D4A418) on light backgrounds. Never in unauthorized colors.</p>
+    </div>
+    <div class="icon-rule-card">
+      <h4>Usage</h4>
+      <p>Used in process diagrams (value chain flow), product spec sheets (origin, altitude, SCA score icons), Instagram feed decorative elements, and document section markers.</p>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top: 40px;">
+    <strong>Icon Categories:</strong> Coffee process (plant, cherry, depulping, fermentation, drying) &bull; Costa Rica motifs (palm tree, volcano, jungle, toucan, cocoa pod) &bull; Product &amp; craft (moka pot, scale, coffee cup, roaster) &bull; Values (hands, globe, leaf, recycle) &bull; Logistics (airplane, package, house/warehouse)
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ 07 TONE OF VOICE ═══ -->
+<section id="voice">
+  <div class="section-number">07</div>
+  <div class="section-script">Tone of Voice</div>
+  <h2 class="section-title">How We Speak</h2>
+  <div class="divider"></div>
+  <p class="section-intro">
+    Our voice bridges technical credibility with emotional storytelling. For B2B, data leads and narrative supports. For B2C, narrative leads and data supports. The tone is always confident, warm, precise, and never arrogant.
+  </p>
+
+  <div class="tone-grid">
+    <div class="tone-card">
+      <h4>Confident, Not Arrogant</h4>
+      <div class="tone-desc">We state facts with clarity. We let the quality speak. No superlatives without evidence.</div>
+      <span class="tone-label">Example</span>
+      <div class="tone-example">&ldquo;Every batch is traceable, ethically sourced, and handled under our supervision.&rdquo;</div>
+    </div>
+    <div class="tone-card">
+      <h4>Technical, Yet Accessible</h4>
+      <div class="tone-desc">We use precise coffee terminology (SCA, mucilage, fermentation) but always explain the &ldquo;why&rdquo; behind the data.</div>
+      <span class="tone-label">Example</span>
+      <div class="tone-example">&ldquo;Fermentation lasts 12 to 72 hours. Perfect timing keeps the cup clean and vibrant &mdash; too long, the notes turn sour, and the batch is lost.&rdquo;</div>
+    </div>
+    <div class="tone-card">
+      <h4>Storytelling with Substance</h4>
+      <div class="tone-desc">Every claim is grounded in a verifiable fact: altitude, process, SCA score, origin. We paint a picture, but it&rsquo;s always real.</div>
+      <span class="tone-label">Example</span>
+      <div class="tone-example">&ldquo;Our coffees are born on the slopes of the Poas Volcano, an active volcano in the province of Alajuela, at altitudes of approximately 1,500 m above sea level.&rdquo;</div>
+    </div>
+    <div class="tone-card">
+      <h4>Artisanal Precision</h4>
+      <div class="tone-desc">We emphasize the human hand and controlled craft. Small scale is a strength, not a limitation.</div>
+      <span class="tone-label">Example</span>
+      <div class="tone-example">&ldquo;We don&rsquo;t chase volume. We chase flavor, precision, and consistency &mdash; so you can taste Costa Rica, one micro-lot at a time.&rdquo;</div>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top: 40px;">
+    <strong>B2B vs B2C Priority:</strong><br>
+    <strong>B2B (Traceability Report):</strong> Data &gt; Narrative. Lead with metrics, SCA scores, process specifications, certifications, and logistics data. Support with brand story.<br>
+    <strong>B2C (Portfolio, Instagram):</strong> Narrative &gt; Data. Lead with sensory descriptions, origin story, and emotional connection. Support with key specs (SCA score, altitude, variety).
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ 08 DOCUMENTS ═══ -->
+<section id="documents">
+  <div class="section-number">08</div>
+  <div class="section-script">Document Templates</div>
+  <h2 class="section-title">Document Structure Patterns</h2>
+  <div class="divider"></div>
+  <p class="section-intro">
+    All brand documents follow a consistent structural pattern. Each section combines a title, descriptive text, visual elements (photos, diagrams, maps), and data points. Below are the two primary document templates and their required architecture.
+  </p>
+
+  <!-- Traceability Report -->
+  <div class="doc-pattern">
+    <div class="doc-sidebar">
+      <h4>Template A</h4>
+      <div class="doc-type">Coffee Traceability Report</div>
+      <div class="doc-goal">Builds B2B credibility through data, transparency, and full supply-chain documentation.</div>
+      <div class="doc-priority">DATA &gt; NARRATIVE</div>
+    </div>
+    <div class="doc-structure">
+      <div class="doc-step">
+        <span class="doc-step-num">01</span>
+        <div>
+          <div class="doc-step-title">Brand Mission</div>
+          <div class="doc-step-desc">Title + mission text + hero photo(s) + value-chain diagram with hand-drawn icons</div>
+          <div class="doc-step-elements">
+            <span class="element-tag">Title</span><span class="element-tag">Body text</span><span class="element-tag">Photo</span><span class="element-tag">Diagram</span>
+          </div>
+        </div>
+      </div>
+      <div class="doc-step">
+        <span class="doc-step-num">02</span>
+        <div>
+          <div class="doc-step-title">Origins &amp; Maps</div>
+          <div class="doc-step-desc">Geographic traceability: Costa Rica map with Alajuela highlight, Poas Volcano photo, altitude data, canton markers</div>
+          <div class="doc-step-elements">
+            <span class="element-tag">Title</span><span class="element-tag">Body text</span><span class="element-tag">Map</span><span class="element-tag">Volcano photo</span>
+          </div>
+        </div>
+      </div>
+      <div class="doc-step">
+        <span class="doc-step-num">03</span>
+        <div>
+          <div class="doc-step-title">Processing Overview</div>
+          <div class="doc-step-desc">Washed + Honey sub-blocks, each with description, step-by-step diagram (numbered + icons), key stage explanation, and &ldquo;Impact on Green Bean&rdquo; tags</div>
+          <div class="doc-step-elements">
+            <span class="element-tag">Intro</span><span class="element-tag">Washed block</span><span class="element-tag">Honey block</span><span class="element-tag">Diagrams</span><span class="element-tag">Icons</span>
+          </div>
+        </div>
+      </div>
+      <div class="doc-step">
+        <span class="doc-step-num">04</span>
+        <div>
+          <div class="doc-step-title">Sustainability &amp; Certification</div>
+          <div class="doc-step-desc">Vision statement + PROCOMER and SDGs certifications + verified performance metrics + environmental impact data</div>
+          <div class="doc-step-elements">
+            <span class="element-tag">Vision</span><span class="element-tag">Cert logos</span><span class="element-tag">Metrics</span><span class="element-tag">Comparison data</span>
+          </div>
+        </div>
+      </div>
+      <div class="doc-step">
+        <span class="doc-step-num">05</span>
+        <div>
+          <div class="doc-step-title">Packaging &amp; Export</div>
+          <div class="doc-step-desc">Packaging specs (formats, atmosphere, labeling) + logistics route + storage conditions + quality verification + export diagram</div>
+          <div class="doc-step-elements">
+            <span class="element-tag">Specs</span><span class="element-tag">Logistics</span><span class="element-tag">Storage</span><span class="element-tag">Diagram</span><span class="element-tag">Photo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coffee Portfolio -->
+  <div class="doc-pattern">
+    <div class="doc-sidebar">
+      <h4>Template B</h4>
+      <div class="doc-type">Coffee Portfolio</div>
+      <div class="doc-goal">Drives desire to taste and purchase. Sensory-first storytelling with supporting data.</div>
+      <div class="doc-priority">NARRATIVE &gt; DATA</div>
+    </div>
+    <div class="doc-structure">
+      <div class="doc-step">
+        <span class="doc-step-num">01</span>
+        <div>
+          <div class="doc-step-title">Brand Narrative</div>
+          <div class="doc-step-desc">Tagline + short origin story + current selection overview + process summary (Honey vs Washed with photos)</div>
+          <div class="doc-step-elements">
+            <span class="element-tag">Tagline</span><span class="element-tag">Story</span><span class="element-tag">Process photos</span><span class="element-tag">Flow diagram</span>
+          </div>
+        </div>
+      </div>
+      <div class="doc-step">
+        <span class="doc-step-num">02</span>
+        <div>
+          <div class="doc-step-title">Variety Cards (x3)</div>
+          <div class="doc-step-desc">One page per variety: Caturra, Sarchimor, Villa Sarchi. Each with origin, altitude, process, SCA score, intensity (/5), profile, tasting notes, cup outcome, and product photos</div>
+          <div class="doc-step-elements">
+            <span class="element-tag">Spec card</span><span class="element-tag">Description</span><span class="element-tag">Cup outcome</span><span class="element-tag">Product photo</span><span class="element-tag">Icons</span>
+          </div>
+        </div>
+      </div>
+      <div class="doc-step">
+        <span class="doc-step-num">03</span>
+        <div>
+          <div class="doc-step-title">Harvest &amp; Batch Code</div>
+          <div class="doc-step-desc">Current harvest dates + batch code structure breakdown (date + variety code + KL-ML + Ncr)</div>
+          <div class="doc-step-elements">
+            <span class="element-tag">Date range</span><span class="element-tag">Code format</span><span class="element-tag">Example</span>
+          </div>
+        </div>
+      </div>
+      <div class="doc-step">
+        <span class="doc-step-num">04</span>
+        <div>
+          <div class="doc-step-title">Roasting Partners</div>
+          <div class="doc-step-desc">Cafes Gener (Cardona) + WILD (Namur): philosophy, machinery, batch sizes, photos. B2B roast customization + B2C medium roast default. Min 25 kg/batch.</div>
+          <div class="doc-step-elements">
+            <span class="element-tag">Partner profiles</span><span class="element-tag">B2B/B2C options</span><span class="element-tag">Machinery photos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <strong>Universal Document Rules:</strong> Every document starts with a full-bleed cover page (brand name + document title + year + hero photo + contact info). Page 2 is always a Table of Contents with the NDCR logo over a landscape photo. The brand logo must appear on every page. All diagrams use hand-drawn icons. No stock photography.
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ 09 SOCIAL MEDIA ═══ -->
+<section id="social">
+  <div class="section-number">09</div>
+  <div class="section-script">Social Media</div>
+  <h2 class="section-title">Instagram Feed &amp; Content</h2>
+  <div class="divider"></div>
+  <p class="section-intro">
+    Our Instagram feed (@naturalcostarica) is the primary consumer touchpoint. The grid must maintain visual cohesion through a deliberate rotation of content types and color blocks drawn from the brand palette.
+  </p>
+
+  <div class="palette-label" style="margin-top: 48px;">Feed Color Rotation</div>
+  <div class="feed-grid">
+    <div class="feed-cell" style="background: var(--forest-green);">Photo</div>
+    <div class="feed-cell" style="background: var(--sage-green); color: var(--forest-green);">Text</div>
+    <div class="feed-cell" style="background: var(--dark-brown);">Photo</div>
+    <div class="feed-cell" style="background: var(--warm-beige); color: var(--dark-brown);">Text</div>
+    <div class="feed-cell" style="background: var(--forest-green);">Photo</div>
+    <div class="feed-cell" style="background: var(--cream); color: var(--dark-brown);">Text</div>
+    <div class="feed-cell" style="background: var(--dark-brown);">Photo</div>
+    <div class="feed-cell" style="background: var(--sage-green); color: var(--forest-green);">Text</div>
+    <div class="feed-cell" style="background: var(--forest-green);">Photo</div>
+  </div>
+
+  <div class="social-rules">
+    <div class="social-rule">
+      <h4>Typography in Posts</h4>
+      <p><strong>DM Sans Bold + Uppercase:</strong> All cover slides and main text. Ensures consistent grid aesthetic.<br><br>
+      <strong>Sloop Script Pro:</strong> Lowercase only, no bold. Limited to accent phrases (&ldquo;Pura Vida&rdquo;, &ldquo;feel the wild&rdquo;). Never as primary text.</p>
+    </div>
+    <div class="social-rule">
+      <h4>Corporate Color Accents</h4>
+      <p>Mustard and Terracotta are used exclusively to highlight key data or product characteristics in feed posts. They reinforce the brand&rsquo;s visual signature and should never dominate the composition &mdash; only accent it.</p>
+    </div>
+    <div class="social-rule">
+      <h4>Logo Placement</h4>
+      <p>The NDCR logogram or full lockup must be visible in every post, whether as a watermark, corner element, or integrated into the design. Size and placement adapt to the format while remaining legible.</p>
+    </div>
+  </div>
+
+  <div class="note-box" style="margin-top: 40px;">
+    <strong>Content Mix:</strong> Alternate between 3 content types per row &mdash; (1) Full photo (origin, process, product), (2) Text-over-color (tips, quotes, facts), (3) Product showcase (packaging, beans, cups). This creates visual rhythm and avoids monotony in the grid.
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ 10 COMPETITORS ═══ -->
+<section id="competitors" style="padding-bottom: 60px;">
+  <div class="section-number">10</div>
+  <div class="section-script">Competitive Landscape</div>
+  <h2 class="section-title">Positioning &amp; Differentiation</h2>
+  <div class="divider"></div>
+  <p class="section-intro">
+    Analyzing competitors helps identify what strategies work on Instagram and in the specialty coffee market. We must differentiate ourselves and build a unique style, while using competitor analysis as inspiration and reference.
+  </p>
+
+  <div class="competitor-grid">
+    <div class="competitor-card">
+      <h4>Incapto</h4>
+      <p>Specialty beans + super-automatic machines. Clean, modern packaging. Strong digital presence (64K followers).</p>
+      <span class="comp-tag">Mass-Premium</span>
+    </div>
+    <div class="competitor-card">
+      <h4>Cafes Foronda</h4>
+      <p>Single-origin focus. Artistic, colorful packaging with illustrated origin stories. Traditional roaster feel.</p>
+      <span class="comp-tag">Artisan Heritage</span>
+    </div>
+    <div class="competitor-card">
+      <h4>Naturela</h4>
+      <p>French organic bio coffee. 503 followers. Slow-roasted, artisanal. Similar name &mdash; differentiation critical.</p>
+      <span class="comp-tag">Organic Niche</span>
+    </div>
+    <div class="competitor-card">
+      <h4>Mr. Chava</h4>
+      <p>Specialty roaster in Andalucia. 6K followers. Strong personality-driven content. Direct-to-consumer model.</p>
+      <span class="comp-tag">Personality-Led</span>
+    </div>
+  </div>
+
+  <div class="voice-block" style="margin-top: 60px; background: var(--forest-green);">
+    <blockquote style="font-size: 20px;">
+      Our differentiation: we are the only brand that controls the entire chain from micro-lot selection at the Poas Volcano to vacuum-sealed export and European roasting partnerships &mdash; with full single-variety traceability and no blending.
+    </blockquote>
+    <div class="attribution">Our Competitive Edge</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FOOTER ═══ -->
+<div class="footer">
+  <div class="footer-logo">NATURAL de Costa Rica</div>
+  <p>These guidelines are a living document. As our brand evolves, so will this guide. All team members and partners should reference the latest version before producing any branded content.</p>
+  <div class="footer-contact">
+    <span>info@naturaldecostarica.com</span>
+    <a href="#">naturaldecostarica.com</a>
+    <span>+34 677 997 588</span>
+  </div>
+</div>
+
+</body>
+</html>

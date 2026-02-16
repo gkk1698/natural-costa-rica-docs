@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe de Trazabilidad del Café 2026 — NATURAL de Costa Rica</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark-brown: #512d1c;
+  --brown: #643f22;
+  --warm-beige: #cdc6bd;
+  --light-beige: #dbd8d3;
+  --mustard: #D4A418;
+  --terracotta: #E76F51;
+  --medium-brown: #8B5E3C;
+  --forest-green: #344E41;
+  --sage-green: #A8C886;
+  --cream: #F5F0EB;
+  --off-white: #FAF8F5;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; color:var(--dark-brown); background:var(--off-white); line-height:1.6; -webkit-font-smoothing:antialiased; }
+
+/* ── NAV ── */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(81,45,28,0.95); backdrop-filter:blur(12px); padding:12px 40px; display:flex; align-items:center; justify-content:space-between; }
+nav .brand { font-weight:700; font-size:12px; letter-spacing:3px; color:var(--warm-beige); text-transform:uppercase; }
+nav .links { display:flex; gap:24px; list-style:none; }
+nav .links a { color:var(--warm-beige); text-decoration:none; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; font-weight:400; transition:color .3s; }
+nav .links a:hover { color:var(--mustard); }
+
+/* ── COVER ── */
+.cover { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:var(--dark-brown); color:var(--warm-beige); position:relative; overflow:hidden; padding:80px 40px; }
+.cover::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:radial-gradient(ellipse at 30% 60%, rgba(100,63,34,0.5) 0%, transparent 60%), radial-gradient(ellipse at 80% 30%, rgba(52,78,65,0.2) 0%, transparent 50%); }
+.cover-inner { position:relative; z-index:1; }
+.cover .doc-type { font-size:13px; font-weight:700; letter-spacing:6px; text-transform:uppercase; color:var(--warm-beige); opacity:.6; margin-bottom:24px; }
+.cover h1 { font-size:72px; font-weight:700; letter-spacing:-1px; line-height:1.05; margin-bottom:16px; }
+.cover h1 span { color:var(--mustard); }
+.cover .year-badge { font-size:48px; font-weight:700; color:var(--mustard); margin:32px 0; display:inline-block; border:2px solid rgba(212,164,24,.3); padding:8px 40px; }
+.cover .contact { margin-top:60px; font-size:12px; color:rgba(205,198,189,.5); line-height:2; }
+.cover .contact a { color:var(--mustard); text-decoration:none; }
+
+/* ── TOC ── */
+.toc { display:grid; grid-template-columns:1fr 1fr; min-height:80vh; }
+.toc-visual { background:var(--forest-green); position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+.toc-visual .logo-mark { font-size:14px; font-weight:700; letter-spacing:4px; color:var(--sage-green); text-transform:uppercase; opacity:.4; }
+.toc-visual::after { content:''; position:absolute; bottom:0; left:0; right:0; height:40%; background:linear-gradient(to top, rgba(52,78,65,.8), transparent); }
+.toc-content { padding:100px 80px; display:flex; flex-direction:column; justify-content:center; background:var(--cream); }
+.toc-content h2 { font-size:48px; font-weight:700; line-height:1.1; margin-bottom:48px; }
+.toc-content h2 .script { font-family:'Playfair Display',serif; font-style:italic; font-weight:400; display:block; font-size:20px; color:var(--forest-green); margin-bottom:4px; }
+.toc-item { display:flex; align-items:center; padding:18px 0; border-bottom:1px solid rgba(81,45,28,.08); }
+.toc-item:first-child { border-top:1px solid rgba(81,45,28,.08); }
+.toc-num { font-weight:700; font-size:11px; color:var(--mustard); letter-spacing:2px; min-width:36px; }
+.toc-label { flex:1; font-weight:500; font-size:15px; }
+.toc-desc { font-size:11px; color:var(--brown); letter-spacing:.5px; text-align:right; max-width:200px; }
+
+/* ── SECTIONS ── */
+section { padding:120px 80px; max-width:1400px; margin:0 auto; }
+.full-bleed { max-width:100%; padding:0; }
+.section-num { font-weight:700; font-size:11px; color:var(--mustard); letter-spacing:4px; text-transform:uppercase; margin-bottom:12px; }
+.section-script { font-family:'Playfair Display',serif; font-style:italic; font-weight:400; font-size:18px; color:var(--forest-green); margin-bottom:4px; }
+h2.sec-title { font-size:44px; font-weight:700; line-height:1.15; margin-bottom:8px; }
+h2.sec-title .accent { color:var(--forest-green); font-family:'Playfair Display',serif; font-style:italic; font-weight:400; }
+.sec-subtitle { font-size:14px; font-style:italic; color:var(--brown); margin-bottom:24px; letter-spacing:.5px; }
+.divider { width:60px; height:2px; background:var(--mustard); margin:20px 0 32px; }
+.intro-text { font-size:15px; line-height:1.85; color:var(--brown); max-width:780px; margin-bottom:48px; }
+.intro-text strong { color:var(--dark-brown); }
+
+/* ── SUPPLY CHAIN PIPELINE (NEW) ── */
+.pipeline { margin:48px 0; padding:0; }
+.pipeline-label { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--brown); margin-bottom:20px; }
+.pipeline-track { display:flex; align-items:flex-start; position:relative; padding:0 16px; }
+.pipeline-track::before {
+  content:''; position:absolute; top:28px; left:44px; right:44px; height:3px;
+  background:linear-gradient(90deg, var(--mustard), var(--forest-green));
+  z-index:0;
+}
+.pipeline-node { display:flex; flex-direction:column; align-items:center; flex:1; position:relative; z-index:1; text-align:center; }
+.pipeline-dot {
+  width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-size:20px; font-weight:700; color:var(--cream); background:var(--forest-green);
+  border:4px solid var(--off-white); box-shadow:0 2px 12px rgba(81,45,28,.15);
+  margin-bottom:16px; position:relative;
+}
+.pipeline-dot.gold { background:var(--mustard); color:var(--dark-brown); }
+.pipeline-dot.brown { background:var(--dark-brown); color:var(--mustard); }
+.pipeline-box {
+  background:white; border:1px solid rgba(81,45,28,.08); padding:16px 12px;
+  width:100%; max-width:160px; min-height:80px;
+  box-shadow:0 2px 8px rgba(81,45,28,.06);
+}
+.pipeline-box h4 {
+  font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  color:var(--dark-brown); margin-bottom:6px; line-height:1.3;
+}
+.pipeline-box p { font-size:11px; line-height:1.5; color:var(--brown); }
+
+/* Dark variant */
+.pipeline-dark { background:var(--dark-brown); border-radius:6px; padding:48px 32px; position:relative; overflow:hidden; }
+.pipeline-dark .pipeline-label { color:var(--mustard); }
+.pipeline-dark .pipeline-track::before { background:linear-gradient(90deg, var(--mustard), rgba(212,164,24,.3)); }
+.pipeline-dark .pipeline-dot { border-color:var(--dark-brown); }
+.pipeline-dark .pipeline-box { background:rgba(255,255,255,.06); border-color:rgba(212,164,24,.15); }
+.pipeline-dark .pipeline-box h4 { color:var(--mustard); }
+.pipeline-dark .pipeline-box p { color:var(--warm-beige); }
+
+/* ── ORIGIN HERO (NEW) ── */
+.origin-hero {
+  background:var(--forest-green); position:relative; overflow:hidden;
+  margin:0; padding:0;
+}
+.origin-hero::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(168,200,134,.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(212,164,24,.08) 0%, transparent 40%),
+    linear-gradient(160deg, rgba(52,78,65,1) 0%, rgba(81,45,28,.3) 100%);
+}
+.origin-hero-inner {
+  position:relative; z-index:1;
+  display:grid; grid-template-columns:1fr 1fr; min-height:80vh;
+}
+.origin-text-col {
+  padding:100px 80px; display:flex; flex-direction:column; justify-content:center;
+  color:var(--cream);
+}
+.origin-text-col .section-num { color:var(--sage-green); }
+.origin-text-col h2 { font-size:44px; font-weight:700; line-height:1.15; margin-bottom:8px; color:var(--cream); }
+.origin-text-col h2 .accent { color:var(--sage-green); }
+.origin-text-col .divider { background:var(--sage-green); }
+.origin-text-col .intro-text { color:rgba(245,240,235,.75); }
+.origin-text-col .intro-text strong { color:var(--cream); }
+
+.origin-visual-col {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:80px 60px; position:relative;
+}
+.origin-visual-col::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at 50% 40%, rgba(168,200,134,.08) 0%, transparent 60%);
+}
+
+/* Volcano visual */
+.volcano-visual {
+  position:relative; z-index:1; text-align:center; width:100%;
+}
+.volcano-icon {
+  font-size:80px; margin-bottom:24px; display:block;
+  filter:drop-shadow(0 4px 24px rgba(0,0,0,.2));
+}
+.volcano-name {
+  font-size:14px; font-weight:700; letter-spacing:4px; text-transform:uppercase;
+  color:var(--sage-green); margin-bottom:32px;
+}
+.origin-stat{display:inline-flex;flex-direction:column;align-items:center;padding:24px 40px;}
+.origin-stat-value{font-size:48px;font-weight:700;color:var(--sage-green);line-height:1;}
+.origin-stat-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(168,200,134,.5);margin-top:8px;}
+.origin-tags {
+  display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:16px;
+}
+.origin-tag {
+  padding:8px 18px; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; border-radius:2px;
+}
+.origin-tag.green { background:rgba(168,200,134,.15); color:var(--sage-green); border:1px solid rgba(168,200,134,.2); }
+.origin-tag.gold { background:rgba(212,164,24,.12); color:var(--mustard); border:1px solid rgba(212,164,24,.2); }
+
+/* ── IMAGE PLACEHOLDER ── */
+.img-placeholder {
+  background:var(--cream); border:2px dashed rgba(81,45,28,.12);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:48px 32px; text-align:center; min-height:240px;
+  position:relative; overflow:hidden;
+}
+.img-placeholder::before {
+  content:''; position:absolute; inset:0;
+  background:repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(81,45,28,.015) 10px, rgba(81,45,28,.015) 20px);
+}
+.img-placeholder-icon {
+  font-size:36px; margin-bottom:12px; opacity:.3; position:relative; z-index:1;
+}
+.img-placeholder-text {
+  font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--brown); opacity:.4; position:relative; z-index:1;
+}
+.img-placeholder-hint {
+  font-size:10px; color:var(--brown); opacity:.3; margin-top:6px; position:relative; z-index:1;
+}
+
+/* ── PHOTOS ── */
+.photo { overflow:hidden; position:relative; }
+.photo img { width:100%; height:100%; object-fit:cover; display:block; }
+.photo-tall { height:320px; }
+.photo-med { height:240px; }
+.photo-short { height:180px; }
+.photo-xs { height:120px; }
+.photo-hero { height:400px; }
+.photo-caption {
+  position:absolute; bottom:0; left:0; right:0; padding:16px 20px;
+  background:linear-gradient(to top, rgba(81,45,28,.7), transparent);
+  font-size:10px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,.8);
+}
+
+/* ── SECTION DECORATION ── */
+.section-accent-bar {
+  width:100%; height:4px; margin:0;
+  background:linear-gradient(90deg, var(--mustard), var(--forest-green), var(--dark-brown));
+}
+
+/* ── TWO COL ── */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:60px; margin:48px 0; align-items:start; }
+
+/* ── MAP SECTION ── */
+.map-placeholder { background:var(--light-beige); padding:60px; text-align:center; border-radius:4px; position:relative; min-height:320px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.map-placeholder .country { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--brown); margin-bottom:16px; }
+.map-dot { display:inline-flex; align-items:center; gap:8px; padding:8px 16px; background:var(--forest-green); color:var(--cream); font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin:4px; border-radius:2px; }
+.map-caption { font-size:12px; color:var(--brown); margin-top:20px; font-style:italic; line-height:1.5; }
+
+/* ── PROCESS CARDS ── */
+.process-section { margin:64px 0; }
+.process-header { display:flex; align-items:center; gap:16px; margin-bottom:32px; }
+.process-badge { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:6px 16px; display:inline-block; }
+.process-badge.washed { background:var(--forest-green); color:var(--cream); }
+.process-badge.honey { background:var(--mustard); color:var(--dark-brown); }
+.process-title { font-size:32px; font-weight:700; }
+
+.process-body { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+.process-text { font-size:14px; line-height:1.85; color:var(--brown); }
+.process-text p { margin-bottom:16px; }
+.key-stage { padding:24px; background:rgba(212,164,24,.06); border-left:3px solid var(--mustard); margin:24px 0; }
+.key-stage h4 { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--mustard); margin-bottom:8px; }
+.key-stage p { font-size:13px; line-height:1.75; color:var(--brown); }
+
+.impact-box { display:flex; gap:16px; margin-top:24px; }
+.impact-tag { display:flex; align-items:center; gap:8px; padding:10px 16px; background:var(--cream); border:1px solid rgba(81,45,28,.08); font-size:12px; font-weight:600; color:var(--dark-brown); }
+.impact-icon { width:28px; height:28px; border-radius:50%; background:var(--forest-green); display:flex; align-items:center; justify-content:center; color:var(--sage-green); font-size:12px; }
+
+/* ── PROCESS FLOW VERTICAL ── */
+.flow-vertical { display:flex; flex-direction:column; gap:0; position:relative; padding-left:40px; }
+.flow-vertical::before { content:''; position:absolute; left:18px; top:24px; bottom:24px; width:2px; background:rgba(81,45,28,.1); }
+.flow-v-step { display:flex; align-items:center; gap:16px; padding:12px 0; position:relative; }
+.flow-v-num { width:36px; height:36px; border-radius:50%; background:var(--forest-green); color:var(--cream); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; position:relative; z-index:1; flex-shrink:0; margin-left:-40px; }
+.flow-v-num.honey { background:var(--mustard); color:var(--dark-brown); }
+.flow-v-label { font-size:15px; font-weight:600; color:var(--dark-brown); letter-spacing:.5px; }
+
+/* ── SUSTAINABILITY ── */
+.cert-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin:48px 0; }
+.cert-card { padding:40px; border:1px solid rgba(81,45,28,.08); position:relative; overflow:hidden; }
+.cert-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.cert-card:nth-child(1)::before { background:var(--forest-green); }
+.cert-card:nth-child(2)::before { background:var(--mustard); }
+.cert-card h3 { font-size:20px; font-weight:700; margin-bottom:8px; }
+.cert-card .cert-type { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--mustard); margin-bottom:12px; }
+.cert-card p { font-size:14px; line-height:1.75; color:var(--brown); }
+
+.perf-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin:48px 0; }
+.perf-item { padding:32px; border-left:3px solid var(--forest-green); background:var(--cream); }
+.perf-item h4 { font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--forest-green); margin-bottom:8px; }
+.perf-item p { font-size:13px; line-height:1.75; color:var(--brown); }
+
+.stats-row { display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin:48px 0; }
+.stat-card { padding:40px 32px; text-align:center; background:var(--forest-green); color:var(--cream); position:relative; overflow:hidden; }
+.stat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--sage-green); }
+.stat-value { font-size:42px; font-weight:700; color:var(--sage-green); margin-bottom:4px; }
+.stat-unit { font-size:12px; letter-spacing:1px; color:rgba(245,240,235,.5); margin-bottom:12px; }
+.stat-desc { font-size:12px; line-height:1.6; color:rgba(245,240,235,.7); }
+
+/* ── PACKAGING ── */
+.spec-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin:48px 0; }
+.spec-block h3 { font-size:18px; font-weight:700; margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid var(--mustard); display:inline-block; }
+.spec-list { list-style:none; }
+.spec-list li { padding:10px 0; border-bottom:1px solid rgba(81,45,28,.06); font-size:14px; line-height:1.6; color:var(--brown); display:flex; gap:12px; }
+.spec-list li strong { color:var(--dark-brown); min-width:100px; flex-shrink:0; font-weight:600; }
+
+.storage-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin:48px 0; }
+.storage-card { padding:28px; background:var(--cream); border-top:3px solid var(--mustard); }
+.storage-card h4 { font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--dark-brown); margin-bottom:8px; }
+.storage-card p { font-size:13px; line-height:1.7; color:var(--brown); }
+
+/* ── QUOTE BLOCK ── */
+.quote-block { background:var(--dark-brown); color:var(--cream); padding:60px 80px; margin:48px 0; position:relative; text-align:center; }
+.quote-block::before { content:'\201C'; position:absolute; top:20px; left:60px; font-family:'Playfair Display',serif; font-size:100px; color:rgba(212,164,24,.1); line-height:1; }
+.quote-block blockquote { font-size:22px; font-weight:300; line-height:1.6; max-width:700px; margin:0 auto; position:relative; z-index:1; }
+
+/* ── FOOTER ── */
+.footer { background:var(--dark-brown); color:var(--warm-beige); padding:60px 80px; text-align:center; position:relative; overflow:hidden; }
+.footer .brand { font-weight:700; font-size:13px; letter-spacing:4px; text-transform:uppercase; margin-bottom:16px; }
+.footer .contact-row { display:flex; justify-content:center; gap:32px; font-size:12px; color:rgba(205,198,189,.5); margin-top:16px; }
+.footer .contact-row a { color:var(--mustard); text-decoration:none; }
+.footer .copy { font-size:11px; color:rgba(205,198,189,.3); margin-top:24px; }
+
+/* ── BACKGROUND OVERLAYS ── */
+.cover-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.18;z-index:0;}
+.toc-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.15;}
+.pipeline-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.08;border-radius:6px;z-index:0;}
+.footer-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.1;}
+.photo-sm{height:150px;}
+
+/* ── VERTICAL PIPELINE ── */
+.pipeline-vertical .pipeline-track{flex-direction:column;align-items:flex-start;gap:0;padding:0;}
+.pipeline-vertical .pipeline-track::before{display:none;}
+.pipeline-vertical .pipeline-node{flex-direction:row;gap:16px;text-align:left;width:100%;margin-bottom:8px;}
+.pipeline-vertical .pipeline-node::after{content:'';position:absolute;left:28px;top:56px;width:3px;height:calc(100% - 10px);z-index:0;}
+.pipeline-vertical .pipeline-node:last-child::after{display:none;}
+.pipeline-dark.pipeline-vertical .pipeline-node::after{background:linear-gradient(180deg,var(--mustard),rgba(212,164,24,.3));}
+.pipeline-vertical .pipeline-box{max-width:none;min-height:auto;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  section{padding:80px 40px;}
+  .cover h1{font-size:48px;}
+  h2.sec-title{font-size:32px;}
+  .toc,.two-col,.process-body,.spec-grid,.cert-grid,.perf-grid{grid-template-columns:1fr;}
+  .origin-hero-inner{grid-template-columns:1fr;}
+  .origin-text-col{padding:80px 40px 40px;}
+  .origin-visual-col{padding:40px;}
+  .stats-row,.storage-grid{grid-template-columns:1fr 1fr;}
+  .pipeline-track{flex-direction:column;align-items:center;gap:0;}
+  .pipeline-track::before{display:none;}
+  .pipeline-node{flex-direction:row;gap:16px;text-align:left;width:100%;max-width:400px;margin-bottom:12px;}
+  .pipeline-node::after{content:'';position:absolute;left:28px;top:56px;width:3px;height:calc(100% - 10px);background:linear-gradient(180deg,var(--mustard),var(--forest-green));z-index:0;}
+  .pipeline-node:last-child::after{display:none;}
+  .pipeline-box{max-width:none;min-height:auto;}
+  nav .links{display:none;}
+}
+@media(max-width:640px){
+  section{padding:60px 24px;}
+  .cover h1{font-size:32px;}
+  .stats-row,.storage-grid{grid-template-columns:1fr;}
+  .origin-text-col{padding:60px 24px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="brand">Natural de Costa Rica</div>
+  <ul class="links">
+    <li><a href="#mission">Misi&oacute;n</a></li>
+    <li><a href="#origins">Or&iacute;genes</a></li>
+    <li><a href="#processing">Procesado</a></li>
+    <li><a href="#sustainability">Sostenibilidad</a></li>
+    <li><a href="#packaging">Envasado</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover full-bleed">
+  <img src="Coffee Recolecting (4).png" alt="" class="cover-bg">
+  <div class="cover-inner">
+    <img src="Natural Costa Rica Logo 2.png" alt="Natural de Costa Rica" style="width:120px;margin-bottom:24px;position:relative;z-index:1;">
+    <div class="doc-type">Informe de Trazabilidad del Caf&eacute;</div>
+    <h1>NATURAL <span>DE</span><br>COSTA RICA</h1>
+    <div class="year-badge">2026</div>
+    <div class="contact">
+      <a href="mailto:info@naturaldecostarica.com">info@naturaldecostarica.com</a><br>
+      <a href="https://www.naturaldecostarica.com">www.naturaldecostarica.com</a><br>
+      +34 677 997 588 (WhatsApp)
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TABLE OF CONTENTS ═══ -->
+<div class="toc full-bleed">
+  <div class="toc-visual">
+    <img src="Coffee Cherry.png" alt="" class="toc-bg">
+    <img src="Natural Costa Rica Logo 2.png" alt="Natural de Costa Rica" style="width:160px;opacity:.22;position:relative;z-index:1;">
+  </div>
+  <div class="toc-content">
+    <h2><span class="script">Informe de Trazabilidad</span>&Iacute;ndice</h2>
+    <div class="toc-item"><span class="toc-num">01</span><span class="toc-label">Misi&oacute;n de Marca</span><span class="toc-desc">Control total del origen a la taza</span></div>
+    <div class="toc-item"><span class="toc-num">02</span><span class="toc-label">Or&iacute;genes y Mapas</span><span class="toc-desc">Tierras altas volc&aacute;nicas, Alajuela</span></div>
+    <div class="toc-item"><span class="toc-num">03</span><span class="toc-label">Procesado</span><span class="toc-desc">M&eacute;todos Lavado y Honey</span></div>
+    <div class="toc-item"><span class="toc-num">04</span><span class="toc-label">Sostenibilidad y Certificaci&oacute;n</span><span class="toc-desc">PROCOMER, SDGs, m&eacute;tricas</span></div>
+    <div class="toc-item"><span class="toc-num">05</span><span class="toc-label">Envasado y Exportaci&oacute;n</span><span class="toc-desc">Log&iacute;stica, almacenamiento, calidad</span></div>
+  </div>
+</div>
+
+<!-- ═══ 01 BRAND MISSION ═══ -->
+<section id="mission">
+  <div class="section-num">01</div>
+  <h2 class="sec-title">DE NUESTRAS FINCAS A VUESTRO TUESTE,<br><span class="accent">control total del origen a la taza</span></h2>
+  <div class="divider"></div>
+
+  <div class="intro-text">
+    <p>En NATURAL de Costa Rica, creemos que la verdadera excelencia del caf&eacute; comienza en el origen y se preserva mediante el control, la transparencia y el respeto por la naturaleza.</p>
+    <p style="margin-top:16px;">No somos intermediarios; trabajamos codo con codo con los productores, supervisando cada etapa del proceso: desde la selecci&oacute;n del grano en microlotes de menos de 300 kilogramos, el secado tradicional al sol y el procesado artesanal, hasta la exportaci&oacute;n, las colaboraciones directas B2B y la distribuci&oacute;n al consumidor bajo nuestra propia marca.</p>
+    <p style="margin-top:16px;">Producimos y ofrecemos caf&eacute; de especialidad de altura de Costa Rica, cultivado a aproximadamente 1.500 m sobre el nivel del mar en tierras altas volc&aacute;nicas que enriquecen de forma natural la calidad y consistencia del grano.</p>
+    <p style="margin-top:16px;">Cada lote es trazable, obtenido de forma &eacute;tica y manipulado bajo nuestra supervisi&oacute;n, garantizando que lo que llega a tostadores y consumidores refleja la misma integridad que ten&iacute;a en la finca. No hay granos rotos ni astillados, salvo la estad&iacute;stica incontrolable de entre el 1% y el 2% (sin embargo, un grano m&aacute;s peque&ntilde;o o roto no deteriora la calidad del grano ni del conjunto).</p>
+  </div>
+
+  <!-- SUPPLY CHAIN PIPELINE + INFO BLOCKS -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:48px 0;">
+    <div class="pipeline pipeline-dark pipeline-vertical" style="margin:0;">
+      <img src="Coffee Drying Beds 2.PNG" alt="" class="pipeline-bg">
+      <div class="pipeline-label" style="position:relative;z-index:1;">Cada Proceso Es Trazable</div>
+      <div class="pipeline-track" style="position:relative;z-index:1;">
+        <div class="pipeline-node">
+          <div class="pipeline-dot gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14V7a1 1 0 012 0V5a1 1 0 012 0v0a1 1 0 012 0v2a1 1 0 012 0v7"/><path d="M6 14v1c0 3.3 2.7 6 6 6s6-2.7 6-6v-1"/></svg></div>
+          <div class="pipeline-box">
+            <h4>Selecci&oacute;n de Finca</h4>
+            <p>Microlotes recolectados a mano en las laderas del Volc&aacute;n Po&aacute;s</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="5" ry="8"/><path d="M12 4c-2 3-2 13 0 16"/></svg></div>
+          <div class="pipeline-box">
+            <h4>Procesado</h4>
+            <p>M&eacute;todos Lavado o Honey en las instalaciones de Caf&eacute; de Altura</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="7" r="3"/><path d="M12 1v2M12 10v2M6 7H4M20 7h-2M8.5 3.5L7 2M15.5 3.5L17 2M8.5 10.5L7 12M15.5 10.5L17 12"/><path d="M4 18h16M6 21h12" opacity=".7"/></svg></div>
+          <div class="pipeline-box">
+            <h4>Secado al Sol</h4>
+            <p>Secado tradicional en camas elevadas bajo el sol costarricense</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+          <div class="pipeline-box">
+            <h4>Exportaci&oacute;n</h4>
+            <p>Certificado por PROCOMER, transporte a&eacute;reo a Europa en 36 horas</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot brown"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><rect x="5" y="11" width="14" height="10"/><rect x="9" y="15" width="6" height="6"/></svg></div>
+          <div class="pipeline-box">
+            <h4>Envasado al Vac&iacute;o</h4>
+            <p>Almacenado en verde, listo para los socios tostadores</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px;justify-content:center;">
+      <div style="padding:28px;background:var(--cream);border-bottom:3px solid var(--forest-green);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest-green);margin-bottom:8px;">Selecci&oacute;n de Microlotes</div>
+        <p style="font-size:13px;line-height:1.7;color:var(--brown);">Nuestro equipo visita cada microlote en persona durante la temporada alta de cosecha, recolectando a mano solo las cerezas m&aacute;s maduras de cada parcela. Cada lote se registra individualmente con su altitud, coordenadas GPS, variedad y nombre del productor. Esta precisi&oacute;n garantiza una trazabilidad completa desde el &aacute;rbol hasta el lote final, sin mezclas entre fincas ni variedades en ninguna etapa de la cadena.</p>
+      </div>
+      <div style="padding:28px;background:var(--cream);border-bottom:3px solid var(--forest-green);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest-green);margin-bottom:8px;">Secado al Sol en Costa Rica</div>
+        <p style="font-size:13px;line-height:1.7;color:var(--brown);">El secado tradicional al sol en camas africanas elevadas preserva el car&aacute;cter natural del grano, reduciendo al mismo tiempo el consumo energ&eacute;tico y el impacto medioambiental. Cada lote se seca por separado y se voltea regularmente para asegurar una reducci&oacute;n uniforme de la humedad, alcanzando normalmente el objetivo del 10&ndash;12% de humedad en un plazo de 12 a 15 d&iacute;as. Este m&eacute;todo protege la integridad del sabor y elimina la necesidad de secadoras mec&aacute;nicas.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;">
+    <div class="photo photo-med" style="border-radius:4px;">
+      <img src="Coffee Process 2.0.png" alt="Procesado del caf&eacute; en las instalaciones">
+      <div class="photo-caption">Procesado poscosecha &middot; Caf&eacute; de Altura</div>
+    </div>
+    <div class="photo photo-med" style="border-radius:4px;">
+      <img src="Coffee Recolecting (3).png" alt="Recolecci&oacute;n selectiva en laderas volc&aacute;nicas">
+      <div class="photo-caption">Recolecci&oacute;n selectiva &middot; Tierras altas del Volc&aacute;n Po&aacute;s</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-accent-bar"></div>
+
+<!-- ═══ 02 ORIGINS & MAPS ═══ -->
+<div class="origin-hero full-bleed" id="origins">
+  <img src="poas 2.jpg" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.20;z-index:0;">
+  <div class="origin-hero-inner">
+    <div class="origin-text-col">
+      <div class="section-num">02</div>
+      <div class="section-script" style="color:var(--sage-green);">Donde comienza</div>
+      <h2 style="font-size:44px;font-weight:700;line-height:1.15;margin-bottom:8px;color:var(--cream);">el <span class="accent">viaje</span></h2>
+      <div style="font-size:14px;font-style:italic;color:rgba(168,200,134,.6);margin-bottom:24px;">Suelos volc&aacute;nicos que nutren nuestro caf&eacute; de altura</div>
+      <div class="divider"></div>
+
+      <div class="intro-text">
+        <p>Nuestros caf&eacute;s nacen en las laderas del Volc&aacute;n Po&aacute;s, un volc&aacute;n activo en la provincia de Alajuela, dentro de los cantones de Grecia y Sarch&iacute;.</p>
+        <p style="margin-top:16px;">Las fincas que componen nuestra red se encuentran a altitudes de aproximadamente 1.500 m sobre el nivel del mar, donde el suelo volc&aacute;nico rico en minerales y materia org&aacute;nica crea las condiciones ideales para el cultivo de caf&eacute; de especialidad de altura.</p>
+        <p style="margin-top:16px;">Cada cosecha comienza con nuestro equipo visitando cada microlote en persona. Junto con los productores locales, recolectamos a mano las cerezas m&aacute;s maduras y registramos los datos de cada lote, incluyendo altitud, ubicaci&oacute;n y la variedad de caf&eacute;.</p>
+        <p style="margin-top:16px;">A continuaci&oacute;n, todas las cerezas se transportan a las instalaciones de Caf&eacute; de Altura de San Ram&oacute;n, tambi&eacute;n ubicadas en Alajuela, donde los m&eacute;todos de procesado tradicional se llevan a cabo con precisi&oacute;n y esmero. Esta proximidad mantiene intacta la identidad de cada variedad, preservando la integridad y consistencia de nuestro caf&eacute;.</p>
+        <p style="margin-top:16px;">El tiempo de almacenamiento es de 1 mes en Costa Rica desde el secado para el control de humedad, y despu&eacute;s se realiza el env&iacute;o a Europa.</p>
+      </div>
+    </div>
+
+    <div class="origin-visual-col">
+      <div class="volcano-visual">
+        <div class="origin-stat" style="margin-bottom:16px;">
+          <div class="origin-stat-value">1,500</div>
+          <div class="origin-stat-label">Metros Sobre el Nivel del Mar</div>
+        </div>
+
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(168,200,134,.5);margin-bottom:10px;">Regiones de Cultivo</div>
+        <div class="origin-tags">
+          <span class="origin-tag green">&#9650; Po&aacute;s Volcano</span>
+        </div>
+        <div class="origin-tags" style="margin-top:8px;">
+          <span class="origin-tag gold">Grecia &middot; Localidad</span>
+          <span class="origin-tag green">Alajuela &middot; Provincia</span>
+          <span class="origin-tag gold">Sarch&iacute; &middot; Localidad</span>
+        </div>
+
+        <!-- Poas Volcano + Costa Rican Landscape -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;">
+          <div class="photo" style="border-radius:4px;height:240px;">
+            <img src="poas 3.jpg" alt="Cr&aacute;ter del Volc&aacute;n Po&aacute;s" style="object-position:center 35%;">
+            <div class="photo-caption" style="background:linear-gradient(to top,rgba(52,78,65,.8),transparent);">Po&aacute;s Volcano &middot; 2.708 m.s.n.m.</div>
+          </div>
+          <div class="photo" style="border-radius:4px;height:240px;">
+            <img src="Costa Rican Landscape.jpg" alt="Paisaje de las tierras altas costarricenses" style="object-position:center bottom;">
+            <div class="photo-caption" style="background:linear-gradient(to top,rgba(52,78,65,.8),transparent);">Tierras altas volc&aacute;nicas &middot; Alajuela</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-accent-bar"></div>
+
+<!-- ═══ 03 PROCESSING ═══ -->
+<section id="processing">
+  <div class="section-num">03</div>
+  <h2 class="sec-title">PROCESOS DEL CAF&Eacute;<br><span class="accent">M&eacute;todos Controlados, Resultados Consistentes</span></h2>
+  <div class="sec-subtitle">M&eacute;todos poscosecha aplicados en Caf&eacute; de Altura de San Ram&oacute;n, Alajuela</div>
+  <div class="divider"></div>
+
+  <div class="intro-text">
+    <p>Cada variedad de nuestra red se procesa utilizando el m&eacute;todo que mejor expresa su potencial.</p>
+    <p style="margin-top:16px;">Ambos m&eacute;todos son completamente trazables y se supervisan bajo un estricto control de calidad en Caf&eacute; de Altura de San Ram&oacute;n.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:64px;">
+    <div>
+      <div style="padding:28px 32px;border:1px solid rgba(81,45,28,.08);display:flex;align-items:center;gap:16px;background:white;">
+        <div style="width:6px;height:48px;background:var(--forest-green);border-radius:3px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--forest-green);margin-bottom:4px;">Sarchimor &amp; Villa Sarch&iacute;</div>
+          <div style="font-size:14px;font-weight:700;color:var(--dark-brown);">Proceso Lavado</div>
+          <div style="font-size:12px;color:var(--brown);font-style:italic;">Realzando la claridad y acidez mediante fermentaci&oacute;n controlada y eliminaci&oacute;n total del muc&iacute;lago</div>
+        </div>
+      </div>
+      <div class="photo photo-med" style="border-radius:4px;margin-top:24px;">
+        <img src="Coffee Cherry with hand.png" alt="Mano sosteniendo cerezas de caf&eacute; maduras" style="object-fit:cover;transform:rotate(180deg);">
+        <div class="photo-caption">Caf&eacute; verde &middot; Microlote monovarietal</div>
+      </div>
+    </div>
+    <div>
+      <div style="padding:28px 32px;border:1px solid rgba(81,45,28,.08);display:flex;align-items:center;gap:16px;background:white;">
+        <div style="width:6px;height:48px;background:var(--mustard);border-radius:3px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mustard);margin-bottom:4px;">Caturra</div>
+          <div style="font-size:14px;font-weight:700;color:var(--dark-brown);">Proceso Honey</div>
+          <div style="font-size:12px;color:var(--brown);font-style:italic;">Acentuando la dulzura y cuerpo al retener el 60% del muc&iacute;lago durante el secado</div>
+        </div>
+      </div>
+      <div class="photo photo-med" style="border-radius:4px;margin-top:24px;">
+        <img src="Green Coffee.jpg" alt="Mano sosteniendo granos de caf&eacute; verde sin tostar" style="object-position:center 30%;">
+        <div class="photo-caption">Caf&eacute; verde &middot; Listo para exportaci&oacute;n</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WASHED PROCESS -->
+  <div class="process-section">
+    <div class="process-header">
+      <span class="process-badge washed">Lavado</span>
+      <span class="process-title">1. Proceso Lavado</span>
+    </div>
+    <div class="process-body">
+      <div>
+        <div class="process-text">
+          <p>El proceso lavado elimina todo el muc&iacute;lago del grano de caf&eacute; mediante fermentaci&oacute;n controlada y lavado con agua. Al retirar todo residuo org&aacute;nico, las cualidades intr&iacute;nsecas del grano quedan completamente expuestas, convirtiendo este m&eacute;todo en el m&aacute;s transparente para evaluar el car&aacute;cter de origen.</p>
+          <p>Este m&eacute;todo ofrece una alta claridad y consistencia, permitiendo que los atributos naturales del grano definan su calidad. El resultado es una taza limpia y brillante donde la acidez y la precisi&oacute;n arom&aacute;tica son las protagonistas.</p>
+        </div>
+        <div class="key-stage">
+          <h4>Fase Clave = Control de Fermentaci&oacute;n</h4>
+          <p>El control y el tiempo de fermentaci&oacute;n definen la calidad del proceso lavado. Los granos cubiertos de muc&iacute;lago fermentan en tanques de agua donde levaduras y bacterias naturales descomponen los az&uacute;cares en &aacute;cidos, dando forma a la claridad y el equilibrio.</p>
+          <p style="margin-top:8px;">Esta fase suele durar de 12 a 72 horas.</p>
+          <p style="margin-top:8px;">Un tiempo perfecto mantiene la taza limpia y vibrante; demasiado tiempo, y las notas se vuelven agrias, y el lote se pierde.</p>
+        </div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--brown);margin:24px 0 12px;">Impacto en el Grano Verde</div>
+        <div class="impact-box" style="flex-direction:column;">
+          <div class="impact-tag" style="flex-direction:column;align-items:flex-start;gap:6px;width:100%;font-weight:400;">
+            <div style="display:flex;align-items:center;gap:8px;"><div class="impact-icon">&#10024;</div><strong>Claridad y Estructura de Sabor</strong></div>
+            <p style="font-size:12px;line-height:1.6;color:var(--brown);margin:0;">La eliminaci&oacute;n total del muc&iacute;lago suprime los sabores competidores, permitiendo que el car&aacute;cter de origen del grano defina la taza. El resultado es un perfil transparente donde las notas florales, c&iacute;tricas y de terroir se expresan con nitidez.</p>
+          </div>
+          <div class="impact-tag" style="flex-direction:column;align-items:flex-start;gap:6px;width:100%;font-weight:400;">
+            <div style="display:flex;align-items:center;gap:8px;"><div class="impact-icon">&#9745;</div><strong>Consistencia y Control de Calidad</strong></div>
+            <p style="font-size:12px;line-height:1.6;color:var(--brown);margin:0;">La fermentaci&oacute;n controlada y el lavado preciso producen resultados uniformes entre lotes. Cada lote cumple el mismo est&aacute;ndar de limpieza y equilibrio, garantizando fiabilidad para tostadores y consumidores.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--dark-brown);border-radius:6px;padding:36px 32px;position:relative;overflow:hidden;height:100%;display:flex;flex-direction:column;">
+          <img src="Working on Coffee 2.PNG" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.1;z-index:0;transform:rotate(270deg) scale(1.5);">
+          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sage-green);margin-bottom:20px;">Pasos del Proceso</div>
+            <div class="flow-vertical" style="padding-left:40px;flex:1;justify-content:space-between;">
+              <div class="flow-v-step"><div class="flow-v-num">1</div><div><div class="flow-v-label" style="color:var(--cream);">Recolecci&oacute;n Selectiva</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Solo cerezas completamente maduras recolectadas a mano de cada microlote</div></div></div>
+              <div style="width:36px;text-align:center;margin:-2px 0 -2px -40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--forest-green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><polyline points="5 12 12 19 19 12"/></svg></div>
+              <div class="flow-v-step"><div class="flow-v-num">2</div><div><div class="flow-v-label" style="color:var(--cream);">Despulpado</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Se retira la piel y todo el muc&iacute;lago mec&aacute;nicamente del grano</div></div></div>
+              <div style="width:36px;text-align:center;margin:-2px 0 -2px -40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--forest-green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><polyline points="5 12 12 19 19 12"/></svg></div>
+              <div class="flow-v-step"><div class="flow-v-num">3</div><div><div class="flow-v-label" style="color:var(--cream);">Fermentaci&oacute;n</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Fermentaci&oacute;n h&uacute;meda en tanques de agua durante 12 a 72 horas</div></div></div>
+              <div style="width:36px;text-align:center;margin:-2px 0 -2px -40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--forest-green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><polyline points="5 12 12 19 19 12"/></svg></div>
+              <div class="flow-v-step"><div class="flow-v-num">4</div><div><div class="flow-v-label" style="color:var(--cream);">Lavado</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Lavado con agua limpia para garantizar la eliminaci&oacute;n completa del muc&iacute;lago</div></div></div>
+              <div style="width:36px;text-align:center;margin:-2px 0 -2px -40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--forest-green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><polyline points="5 12 12 19 19 12"/></svg></div>
+              <div class="flow-v-step"><div class="flow-v-num">5</div><div><div class="flow-v-label" style="color:var(--cream);">Secado al Sol</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Camas africanas elevadas hasta que la humedad se estabiliza en el 10&ndash;12%</div></div></div>
+              <div style="width:36px;text-align:center;margin:-2px 0 -2px -40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--forest-green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><polyline points="5 12 12 19 19 12"/></svg></div>
+              <div class="flow-v-step"><div class="flow-v-num">6</div><div><div class="flow-v-label" style="color:var(--cream);">Envasado al Vac&iacute;o</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Almacenado en bolsas GrainPro, sellado en verde para exportaci&oacute;n</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="photo photo-med" style="border-radius:4px;margin-top:32px;">
+      <img src="Coffee Process 2.0.png" alt="Procesado del caf&eacute; en las instalaciones">
+      <div class="photo-caption">Proceso Lavado &middot; Caf&eacute; de Altura de San Ram&oacute;n</div>
+    </div>
+  </div>
+
+  <!-- HONEY PROCESS -->
+  <div class="process-section" style="margin-top:80px;">
+    <div class="process-header">
+      <span class="process-badge honey">Honey</span>
+      <span class="process-title">2. Proceso Honey</span>
+    </div>
+    <div class="process-body">
+      <div>
+        <div class="process-text">
+          <p>El proceso Honey retiene parte del muc&iacute;lago durante el secado, permitiendo que los az&uacute;cares y la materia org&aacute;nica interact&uacute;en con el grano. Este contacto controlado entre el muc&iacute;lago y el pergamino crea una caramelizaci&oacute;n natural que intensifica la dulzura y el cuerpo de la taza.</p>
+          <p>Nuestro Caturra se somete a un <strong>Proceso Red Honey</strong> con el 60% del muc&iacute;lago retenido, equilibrando dulzura, cuerpo y profundidad arom&aacute;tica. La clasificaci&oacute;n &laquo;red&raquo; indica un per&iacute;odo de secado m&aacute;s largo con volteos menos frecuentes, maximizando la absorci&oacute;n de az&uacute;cares.</p>
+          <p>Cada volteo del pergamino cambia su car&aacute;cter; demasiado r&aacute;pido y se pierde el equilibrio; demasiado lento y aparecen defectos.</p>
+        </div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--brown);margin:24px 0 12px;">Impacto en el Grano Verde</div>
+        <div class="impact-box" style="flex-direction:column;">
+          <div class="impact-tag" style="flex-direction:column;align-items:flex-start;gap:6px;width:100%;font-weight:400;">
+            <div style="display:flex;align-items:center;gap:8px;"><div class="impact-icon" style="background:var(--mustard);color:var(--dark-brown);">&#9829;</div><strong>Dulzura y Cuerpo</strong></div>
+            <p style="font-size:12px;line-height:1.6;color:var(--brown);margin:0;">El muc&iacute;lago retenido act&uacute;a como un edulcorante natural durante el secado, infundiendo al grano az&uacute;cares amielados y aumentando su densidad. Esto produce una sensaci&oacute;n en boca m&aacute;s plena y redonda con matices de caramelo y frutos rojos.</p>
+          </div>
+          <div class="impact-tag" style="flex-direction:column;align-items:flex-start;gap:6px;width:100%;font-weight:400;">
+            <div style="display:flex;align-items:center;gap:8px;"><div class="impact-icon" style="background:var(--mustard);color:var(--dark-brown);">&#9878;</div><strong>Complejidad y Equilibrio</strong></div>
+            <p style="font-size:12px;line-height:1.6;color:var(--brown);margin:0;">Las reacciones enzim&aacute;ticas entre los az&uacute;cares del muc&iacute;lago y el pergamino crean compuestos arom&aacute;ticos complejos que no se encuentran en los caf&eacute;s completamente lavados. El equilibrio entre dulzura, acidez y cuerpo confiere a este proceso su profundidad y versatilidad caracter&iacute;sticas.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--dark-brown);border-radius:6px;padding:36px 32px;position:relative;overflow:hidden;height:100%;display:flex;flex-direction:column;">
+          <img src="Coffee Drying Beds 3.PNG" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.1;z-index:0;">
+          <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);margin-bottom:20px;">Pasos del Proceso</div>
+            <div class="flow-vertical" style="padding-left:40px;flex:1;justify-content:space-between;">
+              <div class="flow-v-step"><div class="flow-v-num honey">1</div><div><div class="flow-v-label" style="color:var(--cream);">Recolecci&oacute;n Selectiva</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Solo cerezas completamente maduras recolectadas a mano en el punto &oacute;ptimo de az&uacute;car</div></div></div>
+              <div style="width:36px;text-align:center;margin:-2px 0 -2px -40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--mustard)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><polyline points="5 12 12 19 19 12"/></svg></div>
+              <div class="flow-v-step"><div class="flow-v-num honey">2</div><div><div class="flow-v-label" style="color:var(--cream);">Despulpado</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Se retira la piel conservando el 60% de la capa de muc&iacute;lago</div></div></div>
+              <div style="width:36px;text-align:center;margin:-2px 0 -2px -40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--mustard)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><polyline points="5 12 12 19 19 12"/></svg></div>
+              <div class="flow-v-step"><div class="flow-v-num honey">3</div><div><div class="flow-v-label" style="color:var(--cream);">Clasificaci&oacute;n y Limpieza</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Los granos se clasifican por densidad y tama&ntilde;o para una calidad consistente</div></div></div>
+              <div style="width:36px;text-align:center;margin:-2px 0 -2px -40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--mustard)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><polyline points="5 12 12 19 19 12"/></svg></div>
+              <div class="flow-v-step"><div class="flow-v-num honey">4</div><div><div class="flow-v-label" style="color:var(--cream);">Secado al Sol</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Pergamino volteado en camas elevadas durante 12&ndash;15 d&iacute;as</div></div></div>
+              <div style="width:36px;text-align:center;margin:-2px 0 -2px -40px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--mustard)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><polyline points="5 12 12 19 19 12"/></svg></div>
+              <div class="flow-v-step"><div class="flow-v-num honey">5</div><div><div class="flow-v-label" style="color:var(--cream);">Envasado al Vac&iacute;o</div><div style="font-size:13px;color:rgba(245,240,235,.5);margin-top:2px;">Almacenado en bolsas GrainPro, sellado en verde para exportaci&oacute;n</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="photo photo-med" style="border-radius:4px;margin-top:32px;">
+      <img src="Coffee Flor.jpg" alt="Flor de caf&eacute; en la rama">
+      <div class="photo-caption">Flor de caf&eacute; &middot; Tierras altas del Volc&aacute;n Po&aacute;s</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-accent-bar"></div>
+
+<!-- ═══ 04 SUSTAINABILITY ═══ -->
+<section id="sustainability">
+  <div class="section-num">04</div>
+  <h2 class="sec-title">SOSTENIBILIDAD<br><span class="accent">y Certificaci&oacute;n</span></h2>
+  <div class="divider"></div>
+
+  <div class="quote-block" style="background:var(--forest-green);margin-top:0;position:relative;overflow:hidden;">
+    <img src="Women Recolecting Cherries.jpg" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.15;z-index:0;">
+    <blockquote style="position:relative;z-index:1;font-weight:700;">Entendemos la sostenibilidad no como una etiqueta, sino como una disciplina,<br>una forma de producir caf&eacute; excepcional<br>protegiendo al mismo tiempo los ecosistemas y las personas que lo hacen posible.</blockquote>
+  </div>
+
+  <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--brown);margin:48px 0 16px;">Certificaciones</div>
+
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-type">Denominaci&oacute;n de Origen</div>
+      <h3>PROCOMER</h3>
+      <p>Costa Rica 100% Ar&aacute;bica, trazable con doble control fitosanitario.</p>
+      <p style="margin-top:8px;">Certifica nuestras exportaciones como aut&eacute;nticas en origen y conformes con los est&aacute;ndares de comercio internacional de Costa Rica.</p>
+      <div class="photo photo-sm" style="margin-top:20px;border-radius:4px;">
+        <img src="Procomer Logo.png" alt="Logo de PROCOMER" style="object-fit:contain;background:white;padding:12px;">
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-type">Naciones Unidas</div>
+      <h3>SDGs</h3>
+      <p>Comercio justo, igualdad y producci&oacute;n responsable.</p>
+      <p style="margin-top:8px;">Actuamos diariamente conforme a los Objetivos de Desarrollo Sostenible, generando trabajo digno, impulsando el consumo responsable y fomentando la igualdad en toda nuestra cadena de valor.</p>
+      <div class="photo photo-sm" style="margin-top:20px;border-radius:4px;">
+        <img src="SDGs logo.png" alt="Logo de los SDGs de Naciones Unidas" style="object-fit:contain;background:white;padding:12px;">
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-text" style="margin-top:32px;text-align:center;margin-left:auto;margin-right:auto;">
+    <p>Pero nuestro modelo de microlotes trazables <strong>va m&aacute;s all&aacute; de las etiquetas de certificaci&oacute;n.</strong> Nuestro enfoque combina microlotes trazables con m&eacute;todos poscosecha sostenibles, respaldados por resultados medioambientales medibles.</p>
+  </div>
+
+  <div style="position:relative;overflow:hidden;border-radius:6px;padding:48px 40px;margin:48px 0;">
+    <img src="Costa Rican Landscape.jpg" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.15;z-index:0;">
+    <div style="position:relative;z-index:1;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--forest-green);margin-bottom:24px;">Rendimiento Sostenible Verificado</div>
+      <div class="perf-grid" style="margin:0;">
+        <div class="perf-item">
+          <h4>Trazabilidad de Cada Microlote y Variedad &Uacute;nica</h4>
+          <p>Cada lote se registra desde el origen hasta la exportaci&oacute;n; sin mezclas entre variedades.</p>
+        </div>
+        <div class="perf-item">
+          <h4>Secado al Sol y Control de Agua</h4>
+          <p>El secado natural reduce el consumo energ&eacute;tico; el lavado parametrizado minimiza el uso de agua.</p>
+        </div>
+        <div class="perf-item">
+          <h4>Conservaci&oacute;n de Suelos Volc&aacute;nicos</h4>
+          <p>El enriquecimiento con materia org&aacute;nica de un volc&aacute;n activo y la m&iacute;nima intervenci&oacute;n mec&aacute;nica preservan la fertilidad y reducen la erosi&oacute;n.</p>
+        </div>
+        <div class="perf-item" style="border-left-color:var(--mustard);">
+          <h4>Fincas de Microlotes</h4>
+          <p>Las fincas peque&ntilde;as y de microlotes en sistemas agroforestales preservan m&aacute;s biodiversidad, reducen la erosi&oacute;n del suelo y utilizan menos insumos sint&eacute;ticos que las grandes explotaciones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--forest-green);margin:48px 0 16px;">C&oacute;mo Nuestro Enfoque Contribuye a Mejorar la Sostenibilidad del Caf&eacute; Costarricense</div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value">93%</div>
+      <div class="stat-unit">Costa Rica</div>
+      <div class="stat-desc">de la producci&oacute;n utiliza beneficios h&uacute;medos ecol&oacute;gicos alimentados por energ&iacute;a renovable.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">2,5&times;</div>
+      <div class="stat-unit">Retenci&oacute;n de Carbono</div>
+      <div class="stat-desc">menos emisiones de di&oacute;xido de carbono y mayor retenci&oacute;n de contaminantes en el suelo que las grandes plantaciones.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">~0,9</div>
+      <div class="stat-unit">kg CO&#8322;e/kg caf&eacute; verde</div>
+      <div class="stat-desc">Los sistemas de microlotes y cooperativas registran de media las huellas de carbono m&aacute;s bajas del mundo.</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-accent-bar"></div>
+
+<!-- ═══ 05 PACKAGING & EXPORT ═══ -->
+<section id="packaging">
+  <div class="section-num">05</div>
+  <h2 class="sec-title">ENVASADO Y<br><span class="accent">Exportaci&oacute;n en Origen</span></h2>
+  <div class="divider"></div>
+
+  <div class="intro-text">
+    <p>Tras el procesado en Caf&eacute; de Altura de San Ram&oacute;n (Alajuela), cada microlote se prepara inmediatamente para su exportaci&oacute;n a Europa en condiciones controladas que preservan la frescura, la integridad y la trazabilidad.</p>
+  </div>
+
+  <div class="spec-grid">
+    <div class="spec-block">
+      <h3>Envasado en Origen</h3>
+      <ul class="spec-list">
+        <li><strong>Formatos</strong>Bolsas selladas al vac&iacute;o con v&aacute;lvula desgasificadora unidireccional y cierre ZIP para mantener el aroma y evitar la oxidaci&oacute;n.</li>
+        <li><strong>Atm&oacute;sfera</strong>Sellado al vac&iacute;o para proteger contra la humedad, el ox&iacute;geno y las variaciones de temperatura durante el transporte a&eacute;reo.</li>
+        <li><strong>Etiquetado</strong>Cada unidad se identifica con c&oacute;digo de lote, variedad, proceso (Lavado/Honey) y fecha de cosecha.</li>
+        <li><strong>Integridad</strong>No se realizan mezclas entre variedades; cada bolsa corresponde a un microlote monovarietal.</li>
+      </ul>
+    </div>
+    <div class="spec-block">
+      <h3>Log&iacute;stica de Exportaci&oacute;n</h3>
+      <ul class="spec-list">
+        <li><strong>Ruta</strong>Transporte a&eacute;reo (36 h) desde el Aeropuerto Juan Santamar&iacute;a, San Jos&eacute;, Costa Rica, a Europa.</li>
+        <li><strong>Por qu&eacute; a&eacute;reo</strong>Prevenir la oxidaci&oacute;n mar&iacute;tima y garantizar la m&aacute;xima frescura.</li>
+        <li><strong>Trazabilidad</strong>La documentaci&oacute;n de exportaci&oacute;n (por PROCOMER) vincula cada lote enviado con su finca, altitud, proceso y c&oacute;digo de microlote correspondientes.</li>
+        <li><strong>Manipulaci&oacute;n</strong>Todo el caf&eacute; permanece sellado durante el transporte. Se evita la exposici&oacute;n directa a la temperatura mediante manipulaci&oacute;n con clima controlado y tiempos de transferencia reducidos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Packaging photos -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin:48px 0;">
+    <div class="photo" style="height:240px;border-radius:4px;">
+      <img src="Coffee Packaging.jpg" alt="Bolsa negra NATURAL de Costa Rica con granos de caf&eacute; verde">
+      <div class="photo-caption">Envasado al vac&iacute;o</div>
+    </div>
+    <div class="photo" style="height:240px;border-radius:4px;">
+      <img src="Green Coffee.jpg" alt="Mano sosteniendo granos de caf&eacute; verde sin tostar">
+      <div class="photo-caption">Caf&eacute; verde &middot; Listo para exportaci&oacute;n</div>
+    </div>
+    <div class="photo" style="height:240px;border-radius:4px;">
+      <img src="Packaging Coffee.jpg" alt="Persona llenando bolsas NATURAL de Costa Rica con caf&eacute; verde">
+      <div class="photo-caption">Envasado manual en origen</div>
+    </div>
+  </div>
+
+  <!-- EXPORT ROUTE + QUALITY & STORAGE SIDE BY SIDE -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:48px 0;">
+    <div class="pipeline pipeline-dark pipeline-vertical" style="margin:0;">
+      <img src="Green Coffee with Logo 3.png" alt="" class="pipeline-bg">
+      <div class="pipeline-label" style="position:relative;z-index:1;">Ruta de Exportaci&oacute;n, del Origen a Europa</div>
+      <div class="pipeline-track" style="position:relative;z-index:1;">
+        <div class="pipeline-node">
+          <div class="pipeline-dot gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22V12h6v10"/><path d="M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01"/></svg></div>
+          <div class="pipeline-box">
+            <h4>Beneficio Caf&eacute; de Altura</h4>
+            <p>Procesado y control de calidad en las instalaciones de origen</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+          <div class="pipeline-box">
+            <h4>Envasado y Etiquetado</h4>
+            <p>Bolsas selladas al vac&iacute;o, lotes monovarietales codificados individualmente</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="pipeline-box">
+            <h4>Control de Calidad</h4>
+            <p>Verificaci&oacute;n de humedad, densidad y fitosanitaria antes de la exportaci&oacute;n</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+          <div class="pipeline-box">
+            <h4>Transporte A&eacute;reo (36h)</h4>
+            <p>Transporte con clima controlado, de San Jos&eacute; a Europa</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot brown"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><rect x="5" y="11" width="14" height="10"/><rect x="9" y="15" width="6" height="6"/></svg></div>
+          <div class="pipeline-box">
+            <h4>Llegada a Europa</h4>
+            <p>Almacenamiento y distribuci&oacute;n a socios tostadores</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--brown);">Calidad y Almacenamiento Antes de la Exportaci&oacute;n</div>
+      <div class="storage-card">
+        <h4>Reposo Post-Secado</h4>
+        <p>Cada lote reposa en su bolsa sellada durante 5&ndash;7 d&iacute;as antes de la exportaci&oacute;n para estabilizar la humedad y el sabor.</p>
+      </div>
+      <div class="storage-card">
+        <h4>Entorno de Almacenamiento</h4>
+        <p>El tiempo de almacenamiento es de 1 mes en Costa Rica desde el secado, para el control de humedad, y despu&eacute;s se realiza el env&iacute;o a Europa. Seco, ventilado, protegido de la luz solar, a 15&ndash;20 &deg;C y 50&ndash;60 % HR hasta el env&iacute;o.</p>
+      </div>
+      <div class="storage-card">
+        <h4>Verificaci&oacute;n</h4>
+        <p>Se miden la humedad y la densidad antes del envasado para garantizar una estabilidad &oacute;ptima del caf&eacute; verde.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <img src="Costa Rican Landscape.jpg" alt="" class="footer-bg">
+  <div style="position:relative;z-index:1;">
+  <img src="Natural Costa Rica Logo 2.png" alt="Natural de Costa Rica" style="width:80px;margin-bottom:16px;opacity:.7;">
+  <div class="brand">Natural de Costa Rica</div>
+  <p style="font-size:13px;color:rgba(205,198,189,.6);">Informe de Trazabilidad del Caf&eacute; 2026</p>
+  <div class="contact-row">
+    <a href="mailto:info@naturaldecostarica.com">info@naturaldecostarica.com</a>
+    <a href="https://www.naturaldecostarica.com">www.naturaldecostarica.com</a>
+    <span>+34 677 997 588 (WhatsApp)</span>
+  </div>
+  <div class="copy">&copy; 2026 Natural de Costa Rica. Todos los derechos reservados.</div>
+  </div>
+</div>
+
+</body>
+</html>

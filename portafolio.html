@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio de Café 2026 — NATURAL de Costa Rica</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark-brown:#512d1c;--brown:#643f22;--warm-beige:#cdc6bd;--light-beige:#dbd8d3;
+  --mustard:#D4A418;--terracotta:#E76F51;--medium-brown:#8B5E3C;
+  --forest-green:#344E41;--sage-green:#A8C886;--cream:#F5F0EB;--off-white:#FAF8F5;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--dark-brown);background:var(--off-white);line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(81,45,28,.95);backdrop-filter:blur(12px);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;}
+nav .brand{font-weight:700;font-size:12px;letter-spacing:3px;color:var(--warm-beige);text-transform:uppercase;}
+nav .links{display:flex;gap:24px;list-style:none;}
+nav .links a{color:var(--warm-beige);text-decoration:none;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:400;transition:color .3s;}
+nav .links a:hover{color:var(--mustard);}
+
+/* COVER */
+.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--forest-green);color:var(--cream);position:relative;overflow:hidden;padding:80px 40px;}
+.cover::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 40% 50%,rgba(168,200,134,.15) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(212,164,24,.08) 0%,transparent 50%);}
+.cover-inner{position:relative;z-index:1;}
+.cover .doc-type{font-size:13px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--sage-green);opacity:.7;margin-bottom:24px;}
+.cover h1{font-size:72px;font-weight:700;letter-spacing:-1px;line-height:1.05;margin-bottom:16px;}
+.cover h1 span{color:var(--mustard);}
+.cover .year-badge{font-size:48px;font-weight:700;color:var(--mustard);margin:32px 0;display:inline-block;border:2px solid rgba(212,164,24,.3);padding:8px 40px;}
+.cover .contact{margin-top:60px;font-size:12px;color:rgba(245,240,235,.4);line-height:2;}
+.cover .contact a{color:var(--sage-green);text-decoration:none;}
+
+/* TOC */
+.toc{display:grid;grid-template-columns:1fr 1fr;min-height:80vh;}
+.toc-visual{background:var(--dark-brown);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.toc-visual .mark{font-size:14px;font-weight:700;letter-spacing:4px;color:var(--warm-beige);text-transform:uppercase;opacity:.3;position:relative;z-index:1;}
+.toc-content{padding:100px 80px;display:flex;flex-direction:column;justify-content:center;background:var(--cream);}
+.toc-content h2{font-size:48px;font-weight:700;line-height:1.1;margin-bottom:48px;}
+.toc-content h2 .script{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;display:block;font-size:20px;color:var(--forest-green);margin-bottom:4px;}
+.toc-item{display:flex;align-items:center;padding:18px 0;border-bottom:1px solid rgba(81,45,28,.08);}
+.toc-item:first-child{border-top:1px solid rgba(81,45,28,.08);}
+.toc-num{font-weight:700;font-size:11px;color:var(--mustard);letter-spacing:2px;min-width:36px;}
+.toc-label{flex:1;font-weight:500;font-size:15px;}
+.toc-pages{font-size:11px;color:var(--brown);}
+
+/* SECTIONS */
+section{padding:120px 80px;max-width:1400px;margin:0 auto;}
+.full-bleed{max-width:100%;padding:0;}
+.sec-num{font-weight:700;font-size:11px;color:var(--mustard);letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;}
+.sec-script{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:18px;color:var(--forest-green);margin-bottom:4px;}
+h2.sec-title{font-size:44px;font-weight:700;line-height:1.15;margin-bottom:8px;}
+h2.sec-title .accent{color:var(--forest-green);font-family:'Playfair Display',serif;font-style:italic;font-weight:400;}
+.sec-subtitle{font-size:14px;font-style:italic;color:var(--brown);margin-bottom:24px;}
+.divider{width:60px;height:2px;background:var(--mustard);margin:20px 0 32px;}
+.intro-text{font-size:15px;line-height:1.85;color:var(--brown);max-width:780px;margin-bottom:48px;}
+.intro-text strong{color:var(--dark-brown);}
+
+/* PHOTOS */
+.photo{overflow:hidden;position:relative;}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-tall{height:320px;}
+.photo-med{height:240px;}
+.photo-short{height:180px;}
+.photo-xs{height:120px;}
+.photo-hero{height:400px;}
+.photo-caption{
+  position:absolute;bottom:0;left:0;right:0;padding:16px 20px;
+  background:linear-gradient(to top,rgba(81,45,28,.7),transparent);
+  font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.8);
+}
+.cover-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.18;z-index:0;}
+.toc-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.15;}
+.pipeline-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.08;border-radius:6px;z-index:0;}
+.footer-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.1;}
+.photo-sm{height:150px;}
+
+/* SECTION DECORATION */
+.section-accent-bar{width:100%;height:4px;margin:0;background:linear-gradient(90deg,var(--mustard),var(--forest-green),var(--dark-brown));}
+
+/* PROCESS COMPARISON */
+.process-compare{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:48px 0;border:1px solid rgba(81,45,28,.08);}
+.process-col{padding:48px;}
+.process-col.honey-col{background:var(--cream);}
+.process-col.washed-col{background:white;}
+.process-col h3{font-size:20px;font-weight:700;margin-bottom:8px;}
+.process-col .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;display:inline-block;margin-bottom:16px;}
+.process-col .tag.honey{background:var(--mustard);color:var(--dark-brown);}
+.process-col .tag.washed{background:var(--forest-green);color:var(--cream);}
+.process-col p{font-size:13px;line-height:1.8;color:var(--brown);margin-bottom:12px;}
+.process-col .varieties{font-size:12px;font-weight:600;color:var(--dark-brown);margin-top:16px;padding-top:16px;border-top:1px solid rgba(81,45,28,.08);}
+
+/* SUPPLY CHAIN PIPELINE */
+.pipeline{margin:48px 0;padding:0;}
+.pipeline-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--brown);margin-bottom:20px;}
+.pipeline-track{display:flex;align-items:flex-start;position:relative;padding:0 16px;}
+.pipeline-track::before{
+  content:'';position:absolute;top:28px;left:44px;right:44px;height:3px;
+  background:linear-gradient(90deg,var(--mustard),var(--forest-green));z-index:0;
+}
+.pipeline-node{display:flex;flex-direction:column;align-items:center;flex:1;position:relative;z-index:1;text-align:center;}
+.pipeline-dot{
+  width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:700;color:var(--cream);background:var(--forest-green);
+  border:4px solid var(--off-white);box-shadow:0 2px 12px rgba(81,45,28,.15);
+  margin-bottom:16px;position:relative;
+}
+.pipeline-dot.gold{background:var(--mustard);color:var(--dark-brown);}
+.pipeline-dot.brown{background:var(--dark-brown);color:var(--mustard);}
+.pipeline-box{
+  background:white;border:1px solid rgba(81,45,28,.08);padding:16px 12px;
+  width:100%;max-width:160px;min-height:80px;box-shadow:0 2px 8px rgba(81,45,28,.06);
+}
+.pipeline-box h4{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dark-brown);margin-bottom:6px;line-height:1.3;}
+.pipeline-box p{font-size:11px;line-height:1.5;color:var(--brown);}
+
+.pipeline-dark{background:var(--dark-brown);border-radius:6px;padding:48px 32px;position:relative;overflow:hidden;}
+.pipeline-parallel{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin:48px 0;}
+.pipeline-vertical .pipeline-track{flex-direction:column;align-items:flex-start;gap:0;padding:0;}
+.pipeline-vertical .pipeline-track::before{display:none;}
+.pipeline-vertical .pipeline-node{flex-direction:row;gap:16px;text-align:left;width:100%;margin-bottom:8px;}
+.pipeline-vertical .pipeline-node::after{content:'';position:absolute;left:28px;top:56px;width:3px;height:calc(100% - 10px);z-index:0;}
+.pipeline-vertical .pipeline-node:last-child::after{display:none;}
+.pipeline-vertical .pipeline-dark .pipeline-node::after{background:linear-gradient(180deg,var(--mustard),rgba(212,164,24,.3));}
+.pipeline-vertical.green .pipeline-node::after{background:linear-gradient(180deg,var(--sage-green),rgba(168,200,134,.3));}
+.pipeline-vertical .pipeline-box{max-width:none;min-height:auto;}
+.pipeline-dark .pipeline-label{color:var(--mustard);}
+.pipeline-dark .pipeline-track::before{background:linear-gradient(90deg,var(--mustard),rgba(212,164,24,.3));}
+.pipeline-dark .pipeline-dot{border-color:var(--dark-brown);}
+.pipeline-dark .pipeline-box{background:rgba(255,255,255,.06);border-color:rgba(212,164,24,.15);}
+.pipeline-dark .pipeline-box h4{color:var(--mustard);}
+.pipeline-dark .pipeline-box p{color:var(--warm-beige);}
+
+/* IMAGE PLACEHOLDER */
+.img-placeholder{
+  background:var(--cream);border:2px dashed rgba(81,45,28,.12);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:48px 32px;text-align:center;min-height:240px;position:relative;overflow:hidden;
+}
+.img-placeholder::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(81,45,28,.015) 10px,rgba(81,45,28,.015) 20px);
+}
+.img-placeholder-icon{font-size:36px;margin-bottom:12px;opacity:.3;position:relative;z-index:1;}
+.img-placeholder-text{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--brown);opacity:.4;position:relative;z-index:1;}
+.img-placeholder-hint{font-size:10px;color:var(--brown);opacity:.3;margin-top:6px;position:relative;z-index:1;}
+
+/* ORIGIN BANNER */
+.origin-banner{
+  background:var(--forest-green);padding:80px;position:relative;overflow:hidden;margin:0;
+}
+.origin-banner::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 50%,rgba(168,200,134,.1) 0%,transparent 50%),
+  radial-gradient(ellipse at 80% 70%,rgba(212,164,24,.06) 0%,transparent 40%);
+}
+.origin-banner-inner{
+  position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;
+  max-width:1400px;margin:0 auto;
+}
+.origin-banner-text{color:var(--cream);}
+.origin-banner-text h3{font-size:28px;font-weight:700;margin-bottom:12px;}
+.origin-banner-text h3 .accent{color:var(--sage-green);font-family:'Playfair Display',serif;font-style:italic;font-weight:400;}
+.origin-banner-text p{font-size:14px;line-height:1.8;color:rgba(245,240,235,.7);margin-bottom:12px;}
+.origin-banner-visual{text-align:center;}
+.origin-stat{display:inline-flex;flex-direction:column;align-items:center;padding:24px 40px;}
+.origin-stat-value{font-size:48px;font-weight:700;color:var(--sage-green);line-height:1;}
+.origin-stat-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(168,200,134,.5);margin-top:8px;}
+.origin-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;justify-content:center;}
+.origin-tag{padding:8px 18px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-radius:2px;}
+.origin-tag.green{background:rgba(168,200,134,.15);color:var(--sage-green);border:1px solid rgba(168,200,134,.2);}
+.origin-tag.gold{background:rgba(212,164,24,.12);color:var(--mustard);border:1px solid rgba(212,164,24,.2);}
+
+/* VARIETY CARDS (ENHANCED) */
+.variety-overview{margin:48px 0;}
+.variety-overview h3{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--brown);margin-bottom:24px;}
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.overview-card{
+  padding:40px 36px;border:1px solid rgba(81,45,28,.08);position:relative;overflow:hidden;
+  background:white;transition:box-shadow .3s;
+}
+.overview-card:hover{box-shadow:0 8px 32px rgba(81,45,28,.08);}
+.overview-card::before{
+  content:attr(data-sca);position:absolute;top:16px;right:20px;
+  font-size:56px;font-weight:700;color:rgba(81,45,28,.04);line-height:1;
+}
+.overview-card::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.overview-card:nth-child(1)::after{background:var(--mustard);}
+.overview-card:nth-child(2)::after{background:var(--forest-green);}
+.overview-card:nth-child(3)::after{background:linear-gradient(90deg,var(--mustard),var(--forest-green));}
+.overview-card .card-variety{font-size:22px;font-weight:700;margin-bottom:4px;}
+.overview-card .card-sub{font-size:11px;color:var(--mustard);font-weight:700;letter-spacing:1px;margin-bottom:20px;}
+.spec-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(81,45,28,.04);font-size:12px;}
+.spec-row:last-child{border-bottom:none;}
+.spec-row .label{color:var(--brown);font-weight:600;}
+.spec-row .value{color:var(--dark-brown);font-weight:400;text-align:right;}
+.intensity-dots{display:flex;gap:3px;justify-content:flex-end;}
+.dot{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--dark-brown);}
+.dot.filled{background:var(--dark-brown);}
+
+/* VARIETY DETAIL */
+.variety-detail{padding:100px 80px;max-width:1400px;margin:0 auto;border-top:1px solid rgba(81,45,28,.06);}
+.variety-header{display:flex;align-items:baseline;gap:16px;margin-bottom:32px;}
+.variety-name{font-size:40px;font-weight:700;}
+.variety-type{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);}
+.variety-grid{display:grid;grid-template-columns:320px 1fr;gap:60px;}
+.variety-specs{padding:32px;background:var(--cream);height:fit-content;position:relative;overflow:hidden;}
+.variety-specs::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.variety-specs .vs-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(81,45,28,.06);font-size:13px;gap:12px;}
+.variety-specs .vs-row:last-child{border-bottom:none;}
+.variety-specs .vs-label{font-weight:700;color:var(--dark-brown);text-transform:uppercase;letter-spacing:1px;font-size:10px;min-width:90px;flex-shrink:0;}
+.variety-specs .vs-value{color:var(--brown);text-align:right;}
+.variety-body p{font-size:14px;line-height:1.85;color:var(--brown);margin-bottom:16px;}
+.cup-outcome{padding:24px;background:var(--dark-brown);color:var(--cream);margin-top:24px;}
+.cup-outcome h4{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);margin-bottom:8px;}
+.cup-outcome p{font-size:14px;line-height:1.7;color:var(--warm-beige);margin:0;}
+
+/* Variety accent colors */
+#caturra .variety-specs::before{background:var(--mustard);}
+#sarchimor .variety-specs::before{background:var(--forest-green);}
+#villasarchi .variety-specs::before{background:linear-gradient(90deg,var(--mustard),var(--forest-green));}
+
+/* HARVEST/BATCH */
+.batch-section{padding:48px;background:var(--cream);margin:48px 0;}
+.batch-section h3{font-size:18px;font-weight:700;margin-bottom:16px;}
+.batch-section p{font-size:14px;line-height:1.8;color:var(--brown);margin-bottom:12px;}
+.batch-codes{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
+.batch-code{padding:8px 16px;background:var(--dark-brown);color:var(--mustard);font-size:11px;font-weight:700;letter-spacing:1.5px;font-family:'DM Sans',monospace;}
+
+/* ROASTING PARTNERS */
+.partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin:48px 0;}
+.partner-card{padding:48px;border:1px solid rgba(81,45,28,.08);position:relative;overflow:hidden;}
+.partner-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.partner-card:nth-child(1)::before{background:var(--mustard);}
+.partner-card:nth-child(2)::before{background:var(--forest-green);}
+.partner-card h3{font-size:24px;font-weight:700;margin-bottom:4px;}
+.partner-card .location{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);margin-bottom:20px;}
+.partner-card p{font-size:13px;line-height:1.8;color:var(--brown);margin-bottom:12px;}
+.partner-card ul{list-style:none;padding:0;}
+.partner-card li{font-size:13px;line-height:1.7;color:var(--brown);padding:4px 0 4px 16px;position:relative;}
+.partner-card li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:1.5px;background:var(--mustard);}
+
+/* ROAST OPTIONS */
+.roast-options{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:48px 0;}
+.roast-card{padding:40px;text-align:center;}
+.roast-card.b2b{background:var(--dark-brown);color:var(--cream);}
+.roast-card.b2c{background:var(--forest-green);color:var(--cream);}
+.roast-card h4{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
+.roast-card.b2b h4{color:var(--mustard);}
+.roast-card.b2c h4{color:var(--sage-green);}
+.roast-card p{font-size:14px;line-height:1.75;}
+.roast-card .note{font-size:12px;margin-top:16px;opacity:.6;}
+
+/* FOOTER */
+.footer{background:var(--dark-brown);color:var(--warm-beige);padding:60px 80px;text-align:center;position:relative;overflow:hidden;}
+.footer .brand{font-weight:700;font-size:13px;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;}
+.footer .contact-row{display:flex;justify-content:center;gap:32px;font-size:12px;color:rgba(205,198,189,.5);margin-top:16px;}
+.footer .contact-row a{color:var(--mustard);text-decoration:none;}
+.footer .copy{font-size:11px;color:rgba(205,198,189,.3);margin-top:24px;}
+
+@media(max-width:1024px){
+  section,.variety-detail{padding:80px 40px;}
+  .cover h1{font-size:48px;}
+  h2.sec-title,.variety-name{font-size:32px;}
+  .toc,.process-compare,.variety-grid,.partner-grid,.roast-options,.overview-grid,.pipeline-parallel{grid-template-columns:1fr;}
+  .origin-banner-inner{grid-template-columns:1fr;}
+  .origin-banner{padding:60px 40px;}
+  .pipeline-track{flex-direction:column;align-items:center;gap:0;}
+  .pipeline-track::before{display:none;}
+  .pipeline-node{flex-direction:row;gap:16px;text-align:left;width:100%;max-width:400px;margin-bottom:12px;}
+  .pipeline-node::after{content:'';position:absolute;left:28px;top:56px;width:3px;height:calc(100% - 10px);background:linear-gradient(180deg,var(--mustard),var(--forest-green));z-index:0;}
+  .pipeline-node:last-child::after{display:none;}
+  .pipeline-box{max-width:none;min-height:auto;}
+  nav .links{display:none;}
+}
+@media(max-width:640px){
+  section,.variety-detail{padding:60px 24px;}
+  .cover h1{font-size:32px;}
+  .overview-grid{grid-template-columns:1fr;}
+  .origin-banner{padding:40px 24px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">Natural de Costa Rica</div>
+  <ul class="links">
+    <li><a href="#narrative">Historia</a></li>
+    <li><a href="#varieties">Variedades</a></li>
+    <li><a href="#caturra">Caturra</a></li>
+    <li><a href="#sarchimor">Sarchimor</a></li>
+    <li><a href="#villasarchi">Villa Sarch&iacute;</a></li>
+    <li><a href="#roasting">Tueste</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover full-bleed">
+  <img src="Coffee Cherry.png" alt="" class="cover-bg">
+  <div class="cover-inner">
+    <img src="Natural Costa Rica Logo 2.png" alt="Natural de Costa Rica" style="width:120px;margin-bottom:24px;position:relative;z-index:1;">
+    <div class="doc-type">Portafolio de Caf&eacute;</div>
+    <h1>NATURAL <span>DE</span><br>COSTA RICA</h1>
+    <div class="year-badge">2026</div>
+    <div class="contact">
+      <a href="mailto:info@naturaldecostarica.com">info@naturaldecostarica.com</a><br>
+      <a href="https://www.naturaldecostarica.com">www.naturaldecostarica.com</a><br>
+      +34 677 997 588 (WhatsApp)
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOC ═══ -->
+<div class="toc full-bleed">
+  <div class="toc-visual">
+    <img src="Coffee Recolecting.png" alt="" class="toc-bg">
+    <img src="Natural Costa Rica Logo 2.png" alt="Natural de Costa Rica" style="width:160px;opacity:.22;position:relative;z-index:1;">
+  </div>
+  <div class="toc-content">
+    <h2><span class="script">Portafolio de Caf&eacute;</span>&Iacute;ndice</h2>
+    <div class="toc-item"><span class="toc-num">01</span><span class="toc-label">Procesos</span><span class="toc-pages">Honey y Lavado</span></div>
+    <div class="toc-item"><span class="toc-num">02</span><span class="toc-label">Variedades de Caf&eacute;</span><span class="toc-pages">Resumen y especificaciones</span></div>
+    <div class="toc-item"><span class="toc-num">03</span><span class="toc-label">Caturra</span><span class="toc-pages">Red Honey, SCA 85</span></div>
+    <div class="toc-item"><span class="toc-num">04</span><span class="toc-label">Sarchimor</span><span class="toc-pages">Lavado Trad., SCA 83</span></div>
+    <div class="toc-item"><span class="toc-num">05</span><span class="toc-label">Villa-Sarch&iacute;</span><span class="toc-pages">Lavado Trad., SCA 89</span></div>
+    <div class="toc-item"><span class="toc-num">06</span><span class="toc-label">Socios de Tueste</span><span class="toc-pages">Caf&egrave;s Gener &amp; WILD</span></div>
+  </div>
+</div>
+
+<!-- ═══ 01 NARRATIVE + PROCESSES ═══ -->
+<section id="narrative">
+  <div class="sec-num">01</div>
+  <h2 class="sec-title">SABOREA COSTA RICA<br><span class="accent">un microlote a la vez</span></h2>
+  <div class="divider"></div>
+
+  <div class="intro-text">
+    <p>En NATURAL de Costa Rica, cada caf&eacute; cuenta la historia de nuestra tierra: tierras altas volc&aacute;nicas, suelo f&eacute;rtil y generaciones de artesan&iacute;a.</p>
+    <p style="margin-top:16px;">Trabajamos directamente con peque&ntilde;os productores en las laderas del Volc&aacute;n Po&aacute;s, en la provincia de Alajuela, que cultivan y seleccionan microlotes que capturan la esencia del terroir costarricense: acidez vibrante, dulzura natural y equilibrio en cada taza.</p>
+    <p style="margin-top:16px;">Nuestra selecci&oacute;n actual es un <strong>Caturra Red Honey</strong>, un <strong>Sarchimor Lavado</strong> y un <strong>Villa Sarch&iacute; Lavado</strong>, tres variedades de alta altitud y alta calidad que representan la diversidad y precisi&oacute;n del caf&eacute; de especialidad costarricense.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-bottom:48px;">
+    <div class="photo photo-med" style="border-radius:4px;">
+      <img src="Coffee Cherry 1.jpg" alt="Cerezas de caf&eacute; en la rama">
+      <div class="photo-caption">Cerezas maduras &middot; Selecci&oacute;n en cosecha</div>
+    </div>
+    <div class="photo photo-med" style="border-radius:4px;">
+      <img src="Green Coffee.jpg" alt="Granos de caf&eacute; verde clasificados listos para exportaci&oacute;n">
+      <div class="photo-caption">Caf&eacute; verde &middot; Listo para exportar</div>
+    </div>
+  </div>
+
+  <div class="photo photo-med" style="border-radius:4px;margin-bottom:48px;">
+    <img src="Coffee Drying Beds.jpg" alt="Caf&eacute; sec&aacute;ndose en camas elevadas bajo el sol">
+    <div class="photo-caption">Camas de secado &middot; M&eacute;todo de camas africanas</div>
+  </div>
+
+  <div class="process-compare">
+    <div class="process-col honey-col">
+      <span class="tag honey">Proceso Honey</span>
+      <h3>Proceso Honey</h3>
+      <p>El proceso honey conserva parte del muc&iacute;lago durante el secado, permitiendo que los az&uacute;cares y la materia org&aacute;nica interact&uacute;en con el grano.</p>
+      <p>Nuestro <strong>Caturra</strong> se somete a un <strong>Proceso Red Honey</strong> con el 60% del muc&iacute;lago conservado, equilibrando dulzura, cuerpo y profundidad arom&aacute;tica.</p>
+      <p>Cada vuelta del pergamino cambia su car&aacute;cter; demasiado r&aacute;pido y se pierde el equilibrio; demasiado lento y aparecen defectos.</p>
+      <div class="varieties">Caturra</div>
+    </div>
+    <div class="process-col washed-col">
+      <span class="tag washed">Proceso Lavado</span>
+      <h3>Proceso Lavado</h3>
+      <p>El proceso lavado elimina todo el muc&iacute;lago del grano de caf&eacute; mediante fermentaci&oacute;n controlada y lavado con agua.</p>
+      <p>Este m&eacute;todo ofrece alta claridad y consistencia, permitiendo que los atributos naturales del grano definan su calidad.</p>
+      <p>Nuestro <strong>Sarchimor</strong> y <strong>Villa Sarch&iacute;</strong> se someten a una fermentaci&oacute;n lavada cuidadosamente cronometrada (12&ndash;72 h) donde las levaduras naturales transforman los az&uacute;cares en &aacute;cidos, asegurando una taza limpia, equilibrada y vibrante.</p>
+      <div class="varieties">Sarchimor &amp; Villa-Sarch&iacute;</div>
+    </div>
+  </div>
+
+  <!-- SUPPLY CHAIN PIPELINES (PARALLEL) -->
+  <div class="pipeline-parallel">
+    <div class="pipeline pipeline-dark pipeline-vertical" style="margin:0;border-radius:6px 0 0 6px;">
+      <img src="Coffee Process 2.png" alt="" class="pipeline-bg">
+      <div class="pipeline-label" style="color:var(--mustard);position:relative;z-index:1;">Caturra, Proceso Red Honey</div>
+      <div class="pipeline-track" style="position:relative;z-index:1;">
+        <div class="pipeline-node">
+          <div class="pipeline-dot gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14V7a1 1 0 012 0V5a1 1 0 012 0v0a1 1 0 012 0v2a1 1 0 012 0v7"/><path d="M6 14v1c0 3.3 2.7 6 6 6s6-2.7 6-6v-1"/></svg></div>
+          <div class="pipeline-box"><h4>Recolecci&oacute;n Selectiva</h4><p>Solo se recogen a mano las cerezas completamente maduras de cada lote</p></div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="5" ry="8"/><path d="M12 4c-2 3-2 13 0 16"/></svg></div>
+          <div class="pipeline-box"><h4>Despulpado</h4><p>Se retira la piel conservando el 60% del muc&iacute;lago</p></div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/></svg></div>
+          <div class="pipeline-box"><h4>Fermentaci&oacute;n</h4><p>Los az&uacute;cares se absorben en el grano mediante reacci&oacute;n enzim&aacute;tica</p></div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l-5.5 8.5a6.5 6.5 0 0011 0L12 3z"/></svg></div>
+          <div class="pipeline-box"><h4>Lavado</h4><p>Lavado controlado con agua para eliminar el muc&iacute;lago restante</p></div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="13" rx="1"/><path d="M8 8V6a2 2 0 012-2h4a2 2 0 012 2v2"/><circle cx="12" cy="14.5" r="2.5"/></svg></div>
+          <div class="pipeline-box"><h4>Clasificaci&oacute;n y Limpieza</h4><p>Granos clasificados por densidad y tama&ntilde;o para garantizar la calidad</p></div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="7" r="3"/><path d="M12 1v2M12 10v2M6 7H4M20 7h-2M8.5 3.5L7 2M15.5 3.5L17 2M8.5 10.5L7 12M15.5 10.5L17 12"/><path d="M4 18h16M6 21h12" opacity=".7"/></svg></div>
+          <div class="pipeline-box"><h4>Secado al Sol</h4><p>El pergamino se voltea en camas elevadas bajo sol directo</p></div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot brown"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><rect x="5" y="11" width="14" height="10"/><rect x="9" y="15" width="6" height="6"/></svg></div>
+          <div class="pipeline-box"><h4>Almacenamiento en Espa&ntilde;a</h4><p>Sellado al vac&iacute;o en bolsas GrainPro, listo para tostar</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pipeline pipeline-dark pipeline-vertical green" style="margin:0;background:var(--forest-green);border-radius:0 6px 6px 0;">
+      <img src="Women Recolecting Cherries.jpg" alt="" class="pipeline-bg">
+      <div class="pipeline-label" style="color:var(--sage-green);position:relative;z-index:1;">Sarchimor &amp; Villa-Sarch&iacute;, Proceso Lavado</div>
+      <div class="pipeline-track" style="position:relative;z-index:1;">
+        <div class="pipeline-node">
+          <div class="pipeline-dot" style="border-color:var(--forest-green);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14V7a1 1 0 012 0V5a1 1 0 012 0v0a1 1 0 012 0v2a1 1 0 012 0v7"/><path d="M6 14v1c0 3.3 2.7 6 6 6s6-2.7 6-6v-1"/></svg></div>
+          <div class="pipeline-box" style="background:rgba(255,255,255,.06);border-color:rgba(168,200,134,.15);">
+            <h4 style="color:var(--sage-green);">Recolecci&oacute;n Selectiva</h4><p style="color:rgba(245,240,235,.6);">Solo se recogen cerezas maduras de las laderas de las tierras altas volc&aacute;nicas</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot" style="border-color:var(--forest-green);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="5" ry="8"/><path d="M12 4c-2 3-2 13 0 16"/></svg></div>
+          <div class="pipeline-box" style="background:rgba(255,255,255,.06);border-color:rgba(168,200,134,.15);">
+            <h4 style="color:var(--sage-green);">Despulpado</h4><p style="color:rgba(245,240,235,.6);">Se retira la piel y todo el muc&iacute;lago completamente del grano</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot" style="border-color:var(--forest-green);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/></svg></div>
+          <div class="pipeline-box" style="background:rgba(255,255,255,.06);border-color:rgba(168,200,134,.15);">
+            <h4 style="color:var(--sage-green);">Fermentaci&oacute;n</h4><p style="color:rgba(245,240,235,.6);">Fermentaci&oacute;n h&uacute;meda durante 12&ndash;72 h en tanques de agua controlados</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot" style="border-color:var(--forest-green);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l-5.5 8.5a6.5 6.5 0 0011 0L12 3z"/></svg></div>
+          <div class="pipeline-box" style="background:rgba(255,255,255,.06);border-color:rgba(168,200,134,.15);">
+            <h4 style="color:var(--sage-green);">Lavado</h4><p style="color:rgba(245,240,235,.6);">Lavado con agua limpia para asegurar la eliminaci&oacute;n total del muc&iacute;lago</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot" style="border-color:var(--forest-green);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="13" rx="1"/><path d="M8 8V6a2 2 0 012-2h4a2 2 0 012 2v2"/><circle cx="12" cy="14.5" r="2.5"/></svg></div>
+          <div class="pipeline-box" style="background:rgba(255,255,255,.06);border-color:rgba(168,200,134,.15);">
+            <h4 style="color:var(--sage-green);">Clasificaci&oacute;n y Limpieza</h4><p style="color:rgba(245,240,235,.6);">Granos clasificados por densidad y tama&ntilde;o para garantizar la calidad</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot" style="border-color:var(--forest-green);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="7" r="3"/><path d="M12 1v2M12 10v2M6 7H4M20 7h-2M8.5 3.5L7 2M15.5 3.5L17 2M8.5 10.5L7 12M15.5 10.5L17 12"/><path d="M4 18h16M6 21h12" opacity=".7"/></svg></div>
+          <div class="pipeline-box" style="background:rgba(255,255,255,.06);border-color:rgba(168,200,134,.15);">
+            <h4 style="color:var(--sage-green);">Secado al Sol</h4><p style="color:rgba(245,240,235,.6);">El pergamino se seca en camas elevadas para estabilizar la humedad</p>
+          </div>
+        </div>
+        <div class="pipeline-node">
+          <div class="pipeline-dot brown" style="border-color:var(--forest-green);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><rect x="5" y="11" width="14" height="10"/><rect x="9" y="15" width="6" height="6"/></svg></div>
+          <div class="pipeline-box" style="background:rgba(255,255,255,.06);border-color:rgba(168,200,134,.15);">
+            <h4 style="color:var(--sage-green);">Almacenamiento en Espa&ntilde;a</h4><p style="color:rgba(245,240,235,.6);">Sellado al vac&iacute;o en bolsas GrainPro, listo para tostar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGIN BANNER -->
+<div class="origin-banner full-bleed" style="position:relative;">
+  <img src="poas 2.jpg" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.20;z-index:0;">
+  <div class="origin-banner-inner" style="position:relative;z-index:1;">
+    <div class="origin-banner-text">
+      <h3>Tierras Altas Volc&aacute;nicas, <span class="accent">Caf&eacute; Excepcional</span></h3>
+      <p>Nuestros caf&eacute;s nacen en las laderas del <strong style="color:var(--cream);">Volc&aacute;n Po&aacute;s</strong>, un volc&aacute;n activo en la provincia de Alajuela. El suelo volc&aacute;nico, rico en minerales y materia org&aacute;nica, crea las condiciones ideales para el cultivo de caf&eacute; de especialidad en alta altitud.</p>
+      <p>A m&aacute;s de 1.500 metros sobre el nivel del mar, las temperaturas frescas y las lluvias constantes ralentizan la maduraci&oacute;n de la cereza, permitiendo que los az&uacute;cares y los &aacute;cidos se desarrollen m&aacute;s plenamente en cada grano. Este proceso natural otorga a nuestros caf&eacute;s su caracter&iacute;stica viveza y complejidad.</p>
+      <p>Cada cosecha comienza con nuestro equipo visitando personalmente cada microlote, recogiendo a mano las cerezas m&aacute;s maduras junto a los productores locales. La proximidad entre nuestras regiones de cultivo, Grecia y Sarch&iacute;, asegura un terroir consistente en las tres variedades, preservando al mismo tiempo el car&aacute;cter &uacute;nico de cada lote.</p>
+    </div>
+    <div class="origin-banner-visual">
+      <div class="origin-stat" style="margin-bottom:16px;">
+        <div class="origin-stat-value">1.500</div>
+        <div class="origin-stat-label">Metros Sobre el Nivel del Mar</div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(168,200,134,.5);margin-bottom:10px;">Regiones de Cultivo</div>
+        <div class="origin-tags">
+          <span class="origin-tag green">&#9650; Po&aacute;s Volcano</span>
+        </div>
+        <div class="origin-tags" style="margin-top:8px;">
+          <span class="origin-tag gold">Grecia &middot; Localidad</span>
+          <span class="origin-tag green">Alajuela &middot; Provincia</span>
+          <span class="origin-tag gold">Sarch&iacute; &middot; Localidad</span>
+        </div>
+      </div>
+      <!-- Poas Volcano -->
+      <div class="photo" style="border-radius:4px;height:240px;margin-top:20px;">
+        <img src="poas.webp" alt="Cr&aacute;ter del Volc&aacute;n Po&aacute;s" style="object-position:center 35%;">
+        <div class="photo-caption" style="background:linear-gradient(to top,rgba(52,78,65,.8),transparent);">Po&aacute;s Volcano &middot; 2.708 m.s.n.m.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-accent-bar"></div>
+
+<!-- ═══ 02 VARIETIES OVERVIEW ═══ -->
+<section id="varieties">
+  <div class="sec-num">02</div>
+  <div class="sec-script">Variedades y procesos de caf&eacute;:</div>
+  <h2 class="sec-title">M&Eacute;TODOS CONTROLADOS,<br><span class="accent">Resultados Consistentes</span></h2>
+  <div class="divider"></div>
+
+  <div style="display:flex;gap:32px;margin-bottom:48px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--mustard);"></div>
+      <div style="font-size:14px;color:var(--brown);"><strong style="color:var(--dark-brown);">ORIGEN:</strong> Po&aacute;s Volcano, Alajuela, Costa Rica</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--forest-green);"></div>
+      <div style="font-size:14px;color:var(--brown);"><strong style="color:var(--dark-brown);">ALTITUD:</strong> &plusmn; 1.500 m sobre el nivel del mar</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--terracotta);"></div>
+      <div style="font-size:14px;color:var(--brown);"><strong style="color:var(--dark-brown);">PREPARACI&Oacute;N:</strong> Filtro, Espresso, Prensa Francesa, Moka</div>
+    </div>
+  </div>
+
+  <div class="overview-grid">
+    <!-- Caturra -->
+    <div class="overview-card" data-sca="85">
+      <div class="card-variety">Caturra Red Honey</div>
+      <div class="card-sub">100% Ar&aacute;bica</div>
+      <div class="spec-row"><span class="label">Proceso</span><span class="value">Red Honey (60% muc&iacute;lago)</span></div>
+      <div class="spec-row"><span class="label">SCA Score</span><span class="value">85</span></div>
+      <div class="spec-row"><span class="label">Intensidad</span><span class="value"><span class="intensity-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span></span></div>
+      <div class="spec-row"><span class="label">Perfil</span><span class="value">Suave y redondo, cuerpo medio</span></div>
+      <div class="spec-row"><span class="label">Notas</span><span class="value">Dulce, caramelo, brillo afrutado</span></div>
+      <div class="spec-row"><span class="label">Preparaci&oacute;n</span><span class="value">Filtro, Espresso, Prensa Francesa, Moka</span></div>
+      <div class="photo photo-sm" style="margin-top:20px;border-radius:4px;">
+        <img src="Coffee Cherry.png" alt="Cerezas de caf&eacute; rojas maduras reci&eacute;n cosechadas" style="object-position:center;">
+      </div>
+    </div>
+    <!-- Sarchimor -->
+    <div class="overview-card" data-sca="83">
+      <div class="card-variety">Sarchimor</div>
+      <div class="card-sub">100% Ar&aacute;bica</div>
+      <div class="spec-row"><span class="label">Proceso</span><span class="value">Lavado Tradicional</span></div>
+      <div class="spec-row"><span class="label">SCA Score</span><span class="value">83</span></div>
+      <div class="spec-row"><span class="label">Intensidad</span><span class="value"><span class="intensity-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span></span></div>
+      <div class="spec-row"><span class="label">Perfil</span><span class="value">Cuerpo medio a completo, final limpio</span></div>
+      <div class="spec-row"><span class="label">Notas</span><span class="value">Chocolate, frutos secos, especias suaves</span></div>
+      <div class="spec-row"><span class="label">Preparaci&oacute;n</span><span class="value">Filtro, Espresso, Prensa Francesa, Moka</span></div>
+      <div class="photo photo-sm" style="margin-top:20px;border-radius:4px;">
+        <img src="Coffee Packaging.jpg" alt="Caf&eacute; envasado al vac&iacute;o" style="object-position:center;">
+      </div>
+    </div>
+    <!-- Villa Sarchi -->
+    <div class="overview-card" data-sca="89">
+      <div class="card-variety">Villa Sarch&iacute;</div>
+      <div class="card-sub">100% Ar&aacute;bica, Solo en Verde</div>
+      <div class="spec-row"><span class="label">Proceso</span><span class="value">Lavado Tradicional</span></div>
+      <div class="spec-row"><span class="label">SCA Score</span><span class="value">89</span></div>
+      <div class="spec-row"><span class="label">Intensidad</span><span class="value"><span class="intensity-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span></span></div>
+      <div class="spec-row"><span class="label">Perfil</span><span class="value">Sedoso, equilibrado y elegante</span></div>
+      <div class="spec-row"><span class="label">Notas</span><span class="value">Floral, afrutado, dulzura de frambuesa y caramelo</span></div>
+      <div class="spec-row"><span class="label">Preparaci&oacute;n</span><span class="value">Filtro, Espresso, Prensa Francesa, Moka</span></div>
+      <div class="photo photo-sm" style="margin-top:20px;border-radius:4px;">
+        <img src="Coffee Cherry (2).png" alt="Cerezas de caf&eacute; rojas cosechadas vista cenital" style="object-position:center;">
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;line-height:1.8;color:var(--brown);margin-top:48px;max-width:780px;text-align:center;margin-left:auto;margin-right:auto;">Nuestros caf&eacute;s Caturra y Sarchimor est&aacute;n disponibles tanto en verde como tostados, estos &uacute;ltimos tostados por nuestros socios, Caf&eacute; Gener (Cardona, Espa&ntilde;a) y Wild Coffee Roasters (Bruselas, B&eacute;lgica). Su tueste asegura que el car&aacute;cter de cada variedad se exprese de la mejor manera posible.</p>
+  <p style="font-size:15px;line-height:1.8;color:var(--dark-brown);margin-top:16px;font-weight:500;max-width:780px;text-align:center;margin-left:auto;margin-right:auto;">No perseguimos volumen. Perseguimos sabor, precisi&oacute;n y consistencia, para que pod&aacute;is saborear Costa Rica, un microlote a la vez.</p>
+</section>
+
+<div class="section-accent-bar"></div>
+
+<!-- ═══ 03 CATURRA ═══ -->
+<div class="variety-detail" id="caturra">
+  <div class="variety-header">
+    <h2 class="variety-name">CATURRA</h2>
+    <span class="variety-type">100% Ar&aacute;bica</span>
+  </div>
+  <div class="variety-grid">
+    <div>
+      <div class="variety-specs">
+        <div class="vs-row"><span class="vs-label">Origen</span><span class="vs-value">Po&aacute;s Volcano, Alajuela, Costa Rica</span></div>
+        <div class="vs-row"><span class="vs-label">Altitud</span><span class="vs-value">&plusmn; 1.500 m sobre el nivel del mar</span></div>
+        <div class="vs-row"><span class="vs-label">Proceso</span><span class="vs-value">Red Honey (60% muc&iacute;lago conservado)</span></div>
+        <div class="vs-row"><span class="vs-label">SCA Score</span><span class="vs-value">85</span></div>
+        <div class="vs-row"><span class="vs-label">Intensidad</span><span class="vs-value"><span class="intensity-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span></span></div>
+        <div class="vs-row"><span class="vs-label">Perfil</span><span class="vs-value">Suave y redondo, cuerpo medio</span></div>
+        <div class="vs-row"><span class="vs-label">Notas</span><span class="vs-value">Dulce, caramelo, afrutado</span></div>
+        <div class="vs-row"><span class="vs-label">Preparaci&oacute;n</span><span class="vs-value">Filtro, Espresso, Prensa Francesa, Moka</span></div>
+      </div>
+      <div class="photo photo-med" style="margin-top:24px;border-radius:4px;">
+        <img src="Coffee Drying Beds 3.PNG" alt="Pergamino de caf&eacute; sec&aacute;ndose en camas elevadas">
+        <div class="photo-caption">Caturra &middot; Camas de secado elevadas</div>
+      </div>
+    </div>
+    <div class="variety-body">
+      <p>El Caturra es una mutaci&oacute;n natural de la variedad Bourbon, identificada por primera vez en Brasil y ampliamente cultivada en Am&eacute;rica Central por su estructura compacta y su alto potencial de rendimiento en altitud. Su peque&ntilde;o porte permite una plantaci&oacute;n m&aacute;s densa y una selecci&oacute;n m&aacute;s precisa de las cerezas durante la cosecha.</p>
+      <p>La recolecci&oacute;n selectiva garantiza que solo se recojan las cerezas completamente maduras, asegurando el equilibrio &oacute;ptimo entre az&uacute;cares y &aacute;cidos que define el car&aacute;cter de esta variedad.</p>
+      <p>Durante el <strong>proceso Red Honey</strong>, el 60% del muc&iacute;lago permanece sobre el pergamino. Mientras los granos se secan al sol en camas africanas elevadas, las reacciones enzim&aacute;ticas naturales permiten que los az&uacute;cares y la materia org&aacute;nica se absorban en el grano, aumentando la densidad y la caramelizaci&oacute;n. La fase de secado dura normalmente entre 12 y 15 d&iacute;as, durante los cuales el pergamino se voltea regularmente para asegurar una reducci&oacute;n uniforme de la humedad.</p>
+      <div style="padding:24px;background:rgba(212,164,24,.06);border-left:3px solid var(--mustard);margin:24px 0;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mustard);margin-bottom:8px;">El Resultado</div>
+        <p style="margin:0;">Una taza m&aacute;s completa y dulce, con textura melosa, notas de caramelo y fruta roja, y una acidez equilibrada. Cada vuelta del pergamino refina la taza: demasiado r&aacute;pido y la dulzura se desvanece; demasiado lento y aparecen defectos.</p>
+        <p style="margin:8px 0 0;">El muc&iacute;lago conservado crea un cuerpo almibarado caracter&iacute;stico que distingue este caf&eacute; de las variedades completamente lavadas.</p>
+      </div>
+      <div class="cup-outcome">
+        <h4>Resultado en Taza</h4>
+        <p>Denso, dulce, complejo: perfecto para espresso y tuestes medios que enfatizan cuerpo y profundidad.</p>
+        <p style="margin:8px 0 0;">Proporci&oacute;n de preparaci&oacute;n recomendada: 1:15&ndash;1:16 para filtro, 1:2 para espresso.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 04 SARCHIMOR ═══ -->
+<div class="variety-detail" id="sarchimor">
+  <div class="variety-header">
+    <h2 class="variety-name">SARCHIMOR</h2>
+    <span class="variety-type">100% Ar&aacute;bica</span>
+  </div>
+  <div class="variety-grid">
+    <div>
+      <div class="variety-specs">
+        <div class="vs-row"><span class="vs-label">Origen</span><span class="vs-value">Po&aacute;s Volcano, Alajuela, Costa Rica</span></div>
+        <div class="vs-row"><span class="vs-label">Altitud</span><span class="vs-value">&plusmn; 1.500 m sobre el nivel del mar</span></div>
+        <div class="vs-row"><span class="vs-label">Proceso</span><span class="vs-value">Lavado Trad.</span></div>
+        <div class="vs-row"><span class="vs-label">SCA Score</span><span class="vs-value">83</span></div>
+        <div class="vs-row"><span class="vs-label">Intensidad</span><span class="vs-value"><span class="intensity-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span></span></div>
+        <div class="vs-row"><span class="vs-label">Perfil</span><span class="vs-value">Cuerpo medio a completo, final limpio</span></div>
+        <div class="vs-row"><span class="vs-label">Notas</span><span class="vs-value">Chocolate, frutos secos, especias suaves</span></div>
+        <div class="vs-row"><span class="vs-label">Preparaci&oacute;n</span><span class="vs-value">Filtro, Espresso, Prensa Francesa, Moka</span></div>
+      </div>
+      <div class="photo photo-med" style="margin-top:24px;border-radius:4px;">
+        <img src="Coffee Process 2.0.png" alt="Procesamiento del caf&eacute; en la finca">
+        <div class="photo-caption">Proceso lavado &middot; Fermentaci&oacute;n controlada</div>
+      </div>
+    </div>
+    <div class="variety-body">
+      <p>El Sarchimor es una variedad h&iacute;brida resultado del cruce entre Villa Sarchi y el H&iacute;brido de Timor, que combina la calidad en taza del Ar&aacute;bica costarricense con resistencia natural a la roya del cafeto (<em>Hemileia vastatrix</em>). Esta resiliencia gen&eacute;tica lo convierte en una variedad fiable y productiva en altitudes elevadas sin sacrificar complejidad de sabor.</p>
+      <p>Las cerezas completamente maduras se someten a fermentaci&oacute;n h&uacute;meda (12&ndash;72 h) en tanques de agua, donde la actividad microbiana descompone y elimina todo el muc&iacute;lago de la superficie del grano. El tiempo de fermentaci&oacute;n se controla cuidadosamente para evitar la sobrefermentaci&oacute;n, que introducir&iacute;a sabores avinagrados no deseados.</p>
+      <p>Esta precisi&oacute;n realza la claridad, estructura e integridad del sabor del grano, produciendo un perfil limpio y transparente que refleja el terroir de origen. Tras el lavado, el secado al sol en camas elevadas estabiliza la humedad al 10&ndash;12% y fija la viveza y consistencia.</p>
+      <div style="padding:24px;background:rgba(212,164,24,.06);border-left:3px solid var(--mustard);margin:24px 0;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mustard);margin-bottom:8px;">El Resultado</div>
+        <p style="margin:0;">Una taza limpia y transparente donde el terroir de origen habla con claridad. El proceso lavado elimina cualquier distracci&oacute;n, dejando puro chocolate, calidez de frutos secos y un toque especiado suave que perdura en el final.</p>
+        <p style="margin:8px 0 0;">Su gen&eacute;tica resistente a enfermedades garantiza consistencia entre cosechas sin comprometer la profundidad y el equilibrio que definen esta variedad.</p>
+      </div>
+      <div class="cup-outcome">
+        <h4>Resultado en Taza</h4>
+        <p>Limpio, estructurado y consistente: tonos de chocolate y frutos secos equilibrados por un final brillante y n&iacute;tido.</p>
+        <p style="margin:8px 0 0;">Su cuerpo medio a completo y baja acidez lo hacen vers&aacute;til para distintos m&eacute;todos de preparaci&oacute;n, especialmente adecuado para filtro y tuestes claros de espresso.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 05 VILLA SARCHI ═══ -->
+<div class="variety-detail" id="villasarchi">
+  <div class="variety-header">
+    <h2 class="variety-name">VILLA-SARCH&Iacute;</h2>
+    <span class="variety-type">100% Ar&aacute;bica, Solo en Verde</span>
+  </div>
+  <div class="variety-grid">
+    <div>
+      <div class="variety-specs">
+        <div class="vs-row"><span class="vs-label">Origen</span><span class="vs-value">Po&aacute;s Volcano, Alajuela, Costa Rica</span></div>
+        <div class="vs-row"><span class="vs-label">Altitud</span><span class="vs-value">&plusmn; 1.500 m sobre el nivel del mar</span></div>
+        <div class="vs-row"><span class="vs-label">Proceso</span><span class="vs-value">Lavado Trad.</span></div>
+        <div class="vs-row"><span class="vs-label">SCA Score</span><span class="vs-value">89</span></div>
+        <div class="vs-row"><span class="vs-label">Intensidad</span><span class="vs-value"><span class="intensity-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span></span></div>
+        <div class="vs-row"><span class="vs-label">Perfil</span><span class="vs-value">Sedoso, equilibrado, elegante</span></div>
+        <div class="vs-row"><span class="vs-label">Notas</span><span class="vs-value">Floral, afrutado, dulzura de frambuesa y caramelo</span></div>
+        <div class="vs-row"><span class="vs-label">Preparaci&oacute;n</span><span class="vs-value">Filtro, Espresso, Prensa Francesa, Moka</span></div>
+      </div>
+      <div class="photo photo-med" style="margin-top:24px;border-radius:4px;">
+        <img src="Coffee Process 3.png" alt="Vista general de las operaciones de procesamiento de caf&eacute; en la finca">
+        <div class="photo-caption">Villa Sarch&iacute; &middot; Proceso lavado</div>
+      </div>
+    </div>
+    <div class="variety-body">
+      <p>Villa Sarch&iacute; es una mutaci&oacute;n natural del linaje Bourbon, originaria de la localidad de Sarch&iacute; en el Valle Central de Costa Rica. Su patr&oacute;n de crecimiento compacto y su adaptaci&oacute;n natural a condiciones de gran altitud la convierten en una de las variedades de especialidad m&aacute;s apreciadas del pa&iacute;s, capaz de producir puntuaciones excepcionales en taza cuando se cultiva por encima de los 1.400 metros.</p>
+      <p>Procesada mediante el m&eacute;todo de <strong>Lavado Tradicional</strong>, la fermentaci&oacute;n elimina suavemente el muc&iacute;lago preservando los compuestos florales y afrutados intr&iacute;nsecos del grano. El proceso lavado resalta la acidez natural de la variedad y su claridad arom&aacute;tica, cualidades que a menudo quedan enmascaradas en los m&eacute;todos honey o natural.</p>
+      <p>Un secado y estabilizaci&oacute;n cuidadosos al 10&ndash;12% de humedad mantienen la precisi&oacute;n arom&aacute;tica y la sensaci&oacute;n sedosa en boca. La gran altitud y el suelo volc&aacute;nico del Po&aacute;s amplifican su complejidad natural, revelando delicadas capas de frambuesa, caramelo y notas florales que se desarrollan plenamente durante la lenta maduraci&oacute;n en las temperaturas m&aacute;s frescas de las tierras altas.</p>
+      <p>Con una puntuaci&oacute;n SCA de 89, esta es nuestra variedad mejor valorada y se ofrece exclusivamente como caf&eacute; verde sin tostar, permitiendo a los tostadores crear su propia expresi&oacute;n de su excepcional potencial.</p>
+      <div style="padding:24px;background:rgba(212,164,24,.06);border-left:3px solid var(--mustard);margin:24px 0;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mustard);margin-bottom:8px;">El Resultado</div>
+        <p style="margin:0;">Una taza refinada y arom&aacute;tica donde las notas florales y afrutadas son las protagonistas. La lenta maduraci&oacute;n en las tierras altas y el contenido mineral volc&aacute;nico producen una dulzura natural con capas de frambuesa, caramelo y jazm&iacute;n.</p>
+        <p style="margin:8px 0 0;">Su linaje Bourbon le confiere una sensaci&oacute;n sedosa en boca y una acidez equilibrada que pocas otras variedades costarricenses pueden igualar a esta altitud.</p>
+      </div>
+      <div class="cup-outcome">
+        <h4>Resultado en Taza</h4>
+        <p>Elegante y arom&aacute;tico, con claridad floral y dulzura refinada: se luce mejor en tuestes claros a medios o preparaci&oacute;n por vertido.</p>
+        <p style="margin:8px 0 0;">Su delicada complejidad recompensa la precisi&oacute;n en el tueste y la extracci&oacute;n.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-accent-bar"></div>
+
+<!-- ═══ 06 ROASTING PARTNERS ═══ -->
+<section id="roasting">
+  <div class="sec-num">06</div>
+  <div class="sec-script">Nuestros</div>
+  <h2 class="sec-title">SOCIOS DE TUESTE</h2>
+  <div class="divider"></div>
+
+  <div class="intro-text">
+    <p>Para preservar la integridad de cada grano, NATURAL de Costa Rica colabora con tostadores artesanales en toda Europa, entre ellos:</p>
+  </div>
+
+  <div class="partner-grid">
+    <div class="partner-card">
+      <h3>Caf&egrave;s Gener</h3>
+      <div class="location">Cardona (Catalu&ntilde;a)</div>
+      <p>Fundada en 1950, Caf&egrave;s Gener comenz&oacute; como una peque&ntilde;a empresa familiar tostando caf&eacute; para los bares locales de la localidad de Cardona.</p>
+      <p>Hoy, ya en su tercera generaci&oacute;n, la empresa importa, tuesta y distribuye caf&eacute;s de alta calidad de todo el mundo.</p>
+      <p>Caf&egrave;s Gener tuesta nuestros caf&eacute;s utilizando tostadoras Loring y Probat UG, dos de las m&aacute;quinas m&aacute;s avanzadas y consistentes para el tueste de caf&eacute; de especialidad.</p>
+      <p>Cada lote, de entre 7 y 25 kg, se tuesta con precisi&oacute;n para respetar el car&aacute;cter y el cuerpo de cada variedad, seleccionando la curva de tueste ideal para realzar su perfil natural y alcanzar la excelencia en cada tueste.</p>
+      <ul>
+        <li>Tostadoras Loring y Probat UG</li>
+        <li>Lotes de alta precisi&oacute;n (7&ndash;25 kg)</li>
+        <li>Fundada en 1950, 3.&ordf; generaci&oacute;n</li>
+      </ul>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;">
+        <div class="photo photo-short" style="border-radius:4px;">
+          <img src="Café Gener Logo.png" alt="Logotipo de Caf&egrave;s Gener" style="object-fit:contain;background:white;padding:16px;">
+        </div>
+        <div class="photo photo-short" style="border-radius:4px;">
+          <img src="Roasting machine.jpg" alt="M&aacute;quina tostadora avanzada en Caf&egrave;s Gener">
+        </div>
+      </div>
+    </div>
+    <div class="partner-card">
+      <h3>WILD Specialty Coffee Roasters</h3>
+      <div class="location">Namur (B&eacute;lgica)</div>
+      <p>Ubicados cerca de Namur, en el coraz&oacute;n de Valonia, WILD Specialty Coffee Roasters combina el tueste artesanal con la proximidad de un proyecto local.</p>
+      <p>Especializados en caf&eacute;s de especialidad y operando con un modelo de barra de caf&eacute; m&oacute;vil, WILD mantiene un enfoque preciso y humano en cada lote, asegurando frescura, trazabilidad y control en todo el proceso de tueste.</p>
+      <p>Su cercan&iacute;a al consumidor final y su menor escala permiten afinar los perfiles de tueste con gran atenci&oacute;n al detalle, fortaleciendo el v&iacute;nculo entre origen, calidad y sabor.</p>
+      <ul>
+        <li>Tostadores artesanales</li>
+        <li>Lotes de alta precisi&oacute;n (3&ndash;5 kg)</li>
+        <li>Frescura y trazabilidad</li>
+        <li>Cercan&iacute;a al consumidor</li>
+      </ul>
+      <div class="photo photo-short" style="margin-top:24px;border-radius:4px;">
+        <img src="Wild Coffee Roasters.png" alt="Logotipo de WILD Specialty Coffee Roasters" style="object-fit:contain;background:white;padding:16px;">
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:32px;margin:32px 0;border:1px solid rgba(81,45,28,.08);">
+    <p style="font-size:15px;line-height:1.8;color:var(--brown);max-width:600px;margin:0 auto;">Juntos, reflejan la doble filosof&iacute;a de nuestro caf&eacute;:</p>
+    <div style="display:flex;gap:24px;justify-content:center;margin-top:16px;">
+      <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);">Precisi&oacute;n Param&eacute;trica</span>
+      <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest-green);">Artesan&iacute;a Local</span>
+    </div>
+  </div>
+
+  <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--brown);margin:48px 0 16px;">Tostado a Vuestra Medida</div>
+
+  <div class="roast-options">
+    <div class="roast-card b2b">
+      <h4>Compras B2B</h4>
+      <p>El nivel de tueste (claro, medio u oscuro) puede adaptarse al perfil deseado por el comprador, asegurando la expresi&oacute;n &oacute;ptima de cada variedad seg&uacute;n su uso previsto.</p>
+    </div>
+    <div class="roast-card b2c">
+      <h4>Compras B2C</h4>
+      <p>Nuestros caf&eacute;s se ofrecen siempre con un tueste medio, el equilibrio ideal entre dulzura, cuerpo y acidez.</p>
+      <div class="note">La cantidad m&iacute;nima de tueste es de 25 kg por lote.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <img src="Costa Rica View.png" alt="" class="footer-bg">
+  <div style="position:relative;z-index:1;">
+  <img src="Natural Costa Rica Logo 2.png" alt="Natural de Costa Rica" style="width:80px;margin-bottom:16px;opacity:.7;">
+  <div class="brand">Natural de Costa Rica</div>
+  <p style="font-size:13px;color:rgba(205,198,189,.6);">Portafolio de Caf&eacute; 2026</p>
+  <div class="contact-row">
+    <a href="mailto:info@naturaldecostarica.com">info@naturaldecostarica.com</a>
+    <a href="https://www.naturaldecostarica.com">www.naturaldecostarica.com</a>
+    <span>+34 677 997 588 (WhatsApp)</span>
+  </div>
+  <div class="copy">&copy; 2026 Natural de Costa Rica. Todos los derechos reservados.</div>
+  </div>
+</div>
+
+</body>
+</html>

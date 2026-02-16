@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Natural de Costa Rica</title>
+<title>Natural de Costa Rica — Espa&ntilde;ol</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -15,21 +15,22 @@ h1{font-family:'Playfair Display',serif;font-size:36px;color:var(--cream);letter
 h1 span{color:var(--mustard);font-size:20px;}
 .subtitle{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(205,198,189,.4);margin-bottom:48px;}
 .links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;}
-a{display:block;padding:20px 40px;border:1px solid rgba(168,200,134,.25);border-radius:4px;text-decoration:none;color:var(--sage-green);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:all .3s ease;}
-a:hover{background:var(--forest-green);border-color:var(--forest-green);color:var(--cream);}
-.lang-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(205,198,189,.3);margin-bottom:16px;}
+a.doc{display:block;padding:20px 40px;border:1px solid rgba(168,200,134,.25);border-radius:4px;text-decoration:none;color:var(--sage-green);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:all .3s ease;}
+a.doc:hover{background:var(--forest-green);border-color:var(--forest-green);color:var(--cream);}
+a.back{display:inline-block;margin-top:32px;text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(205,198,189,.4);transition:color .3s;}
+a.back:hover{color:var(--mustard);}
 </style>
 </head>
 <body>
 <div class="container">
   <img src="Natural Costa Rica Logo 2.png" alt="Natural de Costa Rica" class="logo">
   <h1>NATURAL <span>DE</span> COSTA RICA</h1>
-  <p class="subtitle">Specialty Coffee from Volcanic Highlands</p>
-  <div class="lang-label">Select your language</div>
+  <p class="subtitle">Caf&eacute; de Especialidad de Tierras Altas Volc&aacute;nicas</p>
   <div class="links">
-    <a href="en.html">English</a>
-    <a href="es.html">Espa&ntilde;ol</a>
+    <a class="doc" href="portafolio.html">Portafolio de Caf&eacute;</a>
+    <a class="doc" href="trazabilidad.html">Informe de Trazabilidad</a>
   </div>
+  <a class="back" href="index.html">&larr; Volver a la selecci&oacute;n de idioma</a>
 </div>
 </body>
 </html>
